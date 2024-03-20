@@ -8,7 +8,6 @@ from langchain.chains import RetrievalQA
 from langchain.chat_models import ChatOpenAI
 from langchain.document_loaders import TextLoader
 from langchain.vectorstores import DocArrayInMemorySearch
-from IPython.display import display, Markdown
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.embeddings import OpenAIEmbeddings, HuggingFaceInstructEmbeddings
 from langchain.vectorstores import FAISS
