@@ -26,7 +26,7 @@ from langchain_openai import ChatOpenAI
 import os
 
 
-openai_api_key = st.secrets["OPENAI_API_KEY"]
+#openai_api_key = st.secrets["OPENAI_API_KEY"]
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 
