@@ -1,3 +1,4 @@
+
 """
 from google.colab import drive
 drive.mount('/content/drive/')
@@ -23,6 +24,11 @@ from langchain_openai import ChatOpenAI
      
 
 import os
+
+
+openai_api_key = st.secrets["OPENAI_API_KEY"]
+openai.api_key = st.secrets["OPENAI_API_KEY"]
+
 
 # Prompt the user for their OpenAI API key
 #api_key = input("Please enter your OpenAI API key: ")
