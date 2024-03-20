@@ -31,7 +31,7 @@ from langchain.agents.agent_types import AgentType
 from langchain.memory import ConversationBufferMemory
 import tiktoken
 from langchain_openai import ChatOpenAI
-print("done importing")
+#print("done importing")
      
 
 import os
@@ -43,7 +43,7 @@ import os
 os.environ["OPENAI_API_KEY"] = api_key
 
 # Optionally, check that the environment variable was set correctly
-print("OPENAI_API_KEY has been set!")
+#print("OPENAI_API_KEY has been set!")
 
      
 OPENAI_API_KEY has been set!
@@ -52,7 +52,7 @@ llm_model = "gpt-3.5-turbo"
      
 
 from langchain.text_splitter import CharacterTextSplitter
-print("done importing the CharacterTextSplitter")
+#print("done importing the CharacterTextSplitter")
      
 done importing the CharacterTextSplitter
 
@@ -65,8 +65,8 @@ data = text_splitter.split_documents(data)
      
 
 #Data
-print("data")
-data
+#print("data")
+#data
      
 
 # Create vector store
@@ -88,64 +88,16 @@ conversation_chain = ConversationalRetrievalChain.from_llm(
         )
 
      
-
+"""
 query = "What is the status of Danish Politics?"
 result = conversation_chain({"question": query})
 answer = result["answer"]
 answer
      
-"I don't have specific information on the current status of Danish Politics. For the most up-to-date and accurate information, I recommend checking reputable news sources or official government websites related to Denmark."
-
 query = "How can Schultz Jørgensen & Kom help me understand the status of Danish politics?"
 result = conversation_chain({"question": query})
 answer = result["answer"]
 answer
      
-'Schultz Jørgensen & Kom can assist you in understanding the status of Danish politics through their strategic consulting services. They have expertise in organizational dynamics, media logic, cultural potentials, and societal political processes. They can provide insights, analysis, and guidance on the current political landscape in Denmark, helping you navigate and comprehend the complexities of Danish politics. Feel free to reach out to them via email at contact@sj-k.dk or by phone at +45 60137260 for more information on how they can specifically tailor their services to your needs regarding Danish politics.'
+"""
 
-#!pip install Streamlit
-     
-
-from ipywidgets import widgets
-from IPython.display import display, clear_output
-
-# Dummy function to simulate conversation chain interaction
-# Replace this with your actual function to get responses
-def get_response(question):
-    # Assuming your conversation chain setup is correctly initialized
-    # and named `conversation_chain`
-    result = conversation_chain({"question": question})
-    answer = result["answer"]
-    return answer
-
-
-# Text input widget
-text_input = widgets.Text(
-    value='',
-    placeholder='Ask me anything:',
-    description='Question:',
-    disabled=False
-)
-
-# Button widget
-button_send = widgets.Button(
-    description='Submit',
-    disabled=False,
-    button_style='', # 'success', 'info', 'warning', 'danger' or ''
-    tooltip='Send',
-    icon='check' # FontAwesome icons
-)
-
-# Output widget for displaying responses
-output = widgets.Output()
-
-def on_button_clicked(b):
-    # Display the response when the button is clicked
-    with output:
-        clear_output()  # Clear the previous output
-        print(get_response(text_input.value))
-
-button_send.on_click(on_button_clicked)
-
-# Display the widgets
-display(text_input, button_send, output)
