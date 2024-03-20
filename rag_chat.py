@@ -18,7 +18,7 @@ from langchain_experimental.agents.agent_toolkits.csv.base import create_csv_age
 from langchain.agents.agent_types import AgentType
 from langchain.memory import ConversationBufferMemory
 import tiktoken
-#from langchain_openai import ChatOpenAI
+from langchain_openai import ChatOpenAI
 #print("done importing")
      
 
