@@ -87,7 +87,9 @@ conversation_chain = ConversationalRetrievalChain.from_llm(
         memory=memory
         )
 
-     
+
+
+
 """
 query = "What is the status of Danish Politics?"
 result = conversation_chain({"question": query})
@@ -101,3 +103,38 @@ answer
      
 """
 
+
+
+st.title("Conversational AI")
+
+# Session state to store chat history
+if 'chat_history' not in st.session_state:
+    st.session_state.chat_history = []
+
+# User message input
+user_message = st.text_input("You:", key="user_input")
+
+# Function to handle conversation
+def handle_conversation(user_message):
+    if user_message:
+        # Append user message to chat history
+        st.session_state.chat_history.append(f"You: {user_message}")
+        
+        # Here, integrate your conversational AI logic
+        # For demonstration, we're just echoing the user message
+        # In practice, you'd use conversation_chain to get a response
+        ai_response = f"AI: {user_message[::-1]}"  # Placeholder response logic
+        
+        # Append AI response to chat history
+        st.session_state.chat_history.append(ai_response)
+        
+        # Reset user input
+        st.session_state.user_input = ""
+
+# Button to send message
+if st.button("Send"):
+    handle_conversation(user_message)
+
+# Display chat history
+for message in st.session_state.chat_history:
+    st.text(message)
