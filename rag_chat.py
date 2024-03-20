@@ -3,7 +3,7 @@ from google.colab import drive
 drive.mount('/content/drive/')
 """     
 
-
+"""
 !pip install langchain
 !pip install openai
 !pip install tiktoken
@@ -13,7 +13,7 @@ drive.mount('/content/drive/')
 
 !pip install -U langchain-openai
 #To use it run `pip install -U langchain-openai` and import as `from langchain_openai import ChatOpenAI`.
-
+"""
      
 import streamlit as st 
 from langchain.chains import RetrievalQA
