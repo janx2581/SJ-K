@@ -52,7 +52,6 @@ llm_model = "gpt-3.5-turbo"
 from langchain.text_splitter import CharacterTextSplitter
 #print("done importing the CharacterTextSplitter")
      
-done importing the CharacterTextSplitter
 
 #txt_file_path = '/content/drive/MyDrive/scalexi.txt'
 txt_file_path = '/content/drive/MyDrive/SJ-K.txt'
