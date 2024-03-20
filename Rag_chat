@@ -10,7 +10,7 @@ drive.mount('/content/drive/')
 !pip install langchain_experimental
 !pip install "langchain[docarray]"
 """
-!pip install -U langchain-openai
+#!pip install -U langchain-openai
 #To use it run `pip install -U langchain-openai` and import as `from langchain_openai import ChatOpenAI`.
 
      
