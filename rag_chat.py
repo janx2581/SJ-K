@@ -3,15 +3,15 @@ from google.colab import drive
 drive.mount('/content/drive/')
 """     
 
-"""
+
 !pip install langchain
 !pip install openai
 !pip install tiktoken
 !pip install faiss-gpu
 !pip install langchain_experimental
 !pip install "langchain[docarray]"
-"""
-#!pip install -U langchain-openai
+
+!pip install -U langchain-openai
 #To use it run `pip install -U langchain-openai` and import as `from langchain_openai import ChatOpenAI`.
 
      
