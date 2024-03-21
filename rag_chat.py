@@ -80,24 +80,6 @@ conversation_chain = ConversationalRetrievalChain.from_llm(
 
 
 
-
-"""
-query = "What is the status of Danish Politics?"
-result = conversation_chain({"question": query})
-answer = result["answer"]
-answer
-     
-query = "How can Schultz Jørgensen & Kom help me understand the status of Danish politics?"
-result = conversation_chain({"question": query})
-answer = result["answer"]
-answer
-     
-"""
-
-
-
-st.title("Conversational AI")
-
 def get_answer(query):
     result = conversation_chain({"question": query})
     return result["answer"]
