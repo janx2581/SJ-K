@@ -103,7 +103,7 @@ if 'chat_history' not in st.session_state:
     st.session_state.chat_history = []
 
 # User message input
-user_message = st.text_input("You:", key="user_input")
+user_message = st.text_input("You:", key="user_input", value="")
 
 # Function to handle conversation
 def handle_conversation(user_message):
