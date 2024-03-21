@@ -147,7 +147,7 @@ if st.button("Clear chat (måske skal I trykke to gange før det virker)"):
 with open(txt_file_path, 'r', encoding='utf-8') as file:
     sjk_text = file.read()
 
-with st.expander("For transparens: Se hvilken information jeg har puttet i modellen her:"):
+with st.expander("For transparens: Se hvilken information jeg har copy/pasted fra sj-k.dk ind i modellen her:"):
     st.write(sjk_text)
 
 st.markdown("*Obs: Jeg har ikke taget noget om nyhedsbreve, media eller buzzed med.*")
