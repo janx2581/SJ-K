@@ -79,7 +79,6 @@ def get_answer(query):
     result = conversation_chain({"question": query})
     return result["answer"]
 
-
 # Streamlit app layout
 st.title("SJ-K RAG model")
 st.markdown("""
@@ -88,24 +87,71 @@ En demo for min ragmodel.
 Den er sat til at se på data fra SJ-K.dk, men meningen med tiden er naturligvis at sætte den til at se på data fra folketinget.
 """, unsafe_allow_html=False)
 
-# User input
-user_query = st.text_input("Ask your questions here (Preferably in English men dansk virker også):")
+# Define your queries here
+queries = {
+    "What is SJ&K?": "What is SJ&K?",
+    "How can they help me?": "How can they help me?",
+    "What is the status of Danish politics?*": "What is the status of Danish politics?",
+    "How can SJ&K help me understand the status of Danish politics?": "How can SJ&K help me understand the status of Danish politics?",
+}
 
-if user_query:
-    # Get answer from the conversational chain
-    answer = get_answer(user_query)
+# Streamlit app layout continued
+st.markdown("""
+Tryk på et spørgsmål eller skriv dit eget spørgsmål i chatten nedenfor.
+""", unsafe_allow_html=False)
 
-    # Display the answer
+# Initialize session state for selected and user-entered query
+if 'selected_query' not in st.session_state:
+    st.session_state['selected_query'] = None
+if 'user_query' not in st.session_state:
+    st.session_state['user_query'] = ""
+
+# Create buttons for each query
+for button_label, query in queries.items():
+    if st.button(button_label):
+        st.session_state.selected_query = query
+        st.session_state.user_query = ""  # Reset user input when a button is pressed
+
+# Display the result if a predefined query was selected
+if st.session_state.selected_query and not st.session_state.user_query:
+    answer = get_answer(st.session_state.selected_query)
+    st.write(f"Query: {st.session_state.selected_query}")
     st.write("Answer:")
     st.write(answer)
 
+# User input
+st.session_state.user_query = st.text_input("Ask your questions here (Preferably in English men dansk virker også):", value=st.session_state.user_query)
 
-# Read the contents of the file
+if st.session_state.user_query and not st.session_state.selected_query:
+    # Get answer from the conversational chain
+    answer = get_answer(st.session_state.user_query)
+
+    # Display the answer
+    st.write("Query:")
+    st.write(st.session_state.user_query)
+    st.write("Answer:")
+    st.write(answer)
+
+# Function to clear selection and user query
+def clear_selection():
+    st.session_state.selected_query = None
+    st.session_state.user_query = ""
+
+st.markdown("____________________")
+
+# Clear button
+if st.button("Clear chat (måske skal I trykke to gange før det virker)"):
+    clear_selection()
+
+# Reading and displaying file content
 with open(txt_file_path, 'r', encoding='utf-8') as file:
     sjk_text = file.read()
 
-# Dropdown (expander) for displaying non-editable information
 with st.expander("For transparens: Se hvilken information jeg har puttet i modellen her:"):
     st.write(sjk_text)
 
 st.markdown("*Obs: Jeg har ikke taget noget om nyhedsbreve, media eller buzzed med.*")
+st.markdown("*Asterix: Jeg har inkluderet dette spørgsmål for at vise, at den ikke bare finder på noget tilfældigt*")
+
+
+
