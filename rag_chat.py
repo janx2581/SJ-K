@@ -97,7 +97,7 @@ queries = {
 
 # Streamlit app layout continued
 st.markdown("""
-Tryk på et spørgsmål eller skriv dit eget spørgsmål i chatten nedenfor.
+Tryk på et spørgsmål eller skriv dit eget spørgsmål i tekstfeltet nedenfor.
 """, unsafe_allow_html=False)
 
 # Initialize session state for selected and user-entered query
@@ -140,7 +140,7 @@ def clear_selection():
 st.markdown("____________________")
 
 # Clear button
-if st.button("Clear chat (måske skal I trykke to gange før det virker)"):
+if st.button("Clear interface (måske skal I trykke to gange før det virker)"):
     clear_selection()
 
 # Reading and displaying file content
