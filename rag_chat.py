@@ -26,7 +26,7 @@ import os
 
 
 #openai_api_key = st.secrets["OPENAI_API_KEY"]
-openai.api_key = st.secrets[OPENAI_API_KEY]
+openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 
 # Prompt the user for their OpenAI API key
