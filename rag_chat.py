@@ -17,7 +17,7 @@ from langchain.chains import ConversationalRetrievalChain
 from langchain.indexes import VectorstoreIndexCreator
 from langchain_experimental.agents.agent_toolkits.csv.base import create_csv_agent
 from langchain.agents.agent_types import AgentType
-from langchain.memory import ConversationBufferMemory
+from langchain.memory import ConversationBufferMemorye
 import tiktoken
 from langchain_openai import ChatOpenAI
 #print("done importing")
