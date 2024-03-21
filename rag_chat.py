@@ -23,11 +23,11 @@ import openai
 
 import os
 
-"""
+
 # openai_api_key = st.secrets["OPENAI_API_KEY"]
 api_key = st.secrets["OPENAI_API_KEY"]
 os.environ["api_key"] = st.secrets["OPENAI_API_KEY"]
-"""
+
 
 # Prompt the user for their OpenAI API key
 # api_key = input("Please enter your OpenAI API key: ")
