@@ -47,7 +47,7 @@ from langchain.text_splitter import CharacterTextSplitter
 
 
 # txt_file_path = '/content/drive/MyDrive/scalexi.txt'
-txt_file_path = '/Users/janhoegh/Desktop/RAG/SJ-K.txt'
+txt_file_path = 'SJ-K.txt'
 loader = TextLoader(file_path=txt_file_path, encoding="utf-8")
 data = loader.load()
 text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
