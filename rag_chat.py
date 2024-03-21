@@ -74,10 +74,10 @@ conversation_chain = ConversationalRetrievalChain.from_llm(
     memory=memory
 )
 
-
 def get_answer(query):
     result = conversation_chain({"question": query})
     return result["answer"]
+
 
 # Streamlit app layout
 st.title("SJ-K RAG model")
@@ -95,59 +95,66 @@ queries = {
     "How can SJ&K help me understand the status of Danish politics?": "How can SJ&K help me understand the status of Danish politics?",
 }
 
-# Streamlit app layout continued
+# Streamlit app layout
 st.markdown("""
-Tryk på et spørgsmål eller skriv dit eget spørgsmål i tekstfeltet nedenfor.
+Tryk på et spørgsmål eller skriv dit eget spørgsmål i chatten nedenfor.
 """, unsafe_allow_html=False)
 
-# Initialize session state for selected and user-entered query
-if 'selected_query' not in st.session_state:
-    st.session_state['selected_query'] = None
-if 'user_query' not in st.session_state:
-    st.session_state['user_query'] = ""
+
+
+
+# Initialize a variable to hold the selected query
+selected_query = None
 
 # Create buttons for each query
 for button_label, query in queries.items():
     if st.button(button_label):
-        st.session_state.selected_query = query
-        st.session_state.user_query = ""  # Reset user input when a button is pressed
+        selected_query = query
+        break  # Stop checking other buttons once one has been pressed
 
-# Display the result if a predefined query was selected
-if st.session_state.selected_query and not st.session_state.user_query:
-    answer = get_answer(st.session_state.selected_query)
-    st.write(f"Query: {st.session_state.selected_query}")
+# Check if a query has been selected
+if selected_query:
+    # Assuming get_answer function is defined as per your provided code
+    answer = get_answer(selected_query)
+
+    # Display the selected query and the answer
+    st.write(f"Query: {selected_query}")
     st.write("Answer:")
     st.write(answer)
+else:
+    st.write("")
 
 # User input
-st.session_state.user_query = st.text_input("Ask your questions here (Preferably in English men dansk virker også):", value=st.session_state.user_query)
+user_query = st.text_input("Ask your questions here (Preferably in English men dansk virker også):")
 
-if st.session_state.user_query and not st.session_state.selected_query:
+if user_query:
     # Get answer from the conversational chain
-    answer = get_answer(st.session_state.user_query)
+    answer = get_answer(user_query)
 
     # Display the answer
     st.write("Query:")
-    st.write(st.session_state.user_query)
+    st.write(user_query)
     st.write("Answer:")
     st.write(answer)
 
-# Function to clear selection and user query
+
+# Function to clear selection
 def clear_selection():
     st.session_state.selected_query = None
-    st.session_state.user_query = ""
+
 
 st.markdown("____________________")
 
-# Clear button
-if st.button("Clear interface (måske skal I trykke to gange før det virker)"):
+if st.button("Clear"):
     clear_selection()
 
-# Reading and displaying file content
+
+# Read the contents of the file
 with open(txt_file_path, 'r', encoding='utf-8') as file:
     sjk_text = file.read()
 
-with st.expander("For transparens: Se hvilken information jeg har copy/pasted fra sj-k.dk ind i modellen her:"):
+# Dropdown (expander) for displaying non-editable information
+with st.expander("For transparens: Se hvilken information jeg har puttet i modellen her:"):
     st.write(sjk_text)
 
 st.markdown("*Obs: Jeg har ikke taget noget om nyhedsbreve, media eller buzzed med.*")
