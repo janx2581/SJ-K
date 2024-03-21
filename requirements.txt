@@ -1,4 +1,3 @@
-langchain
 openai
 tiktoken
 faiss-gpu
@@ -6,4 +5,3 @@ langchain_experimental
 langchain[docarray]
 langchain_openai
 langchain_community
-from langchain.memory import ConversationBufferMemorye
