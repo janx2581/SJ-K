@@ -80,14 +80,12 @@ def get_answer(query):
 
 
 # Streamlit app layout
-st.title("SJ-K RAG model")
+st.title("Thesis Assistant: SJ-K RAG Model")
 st.markdown("""
-En demo for min ragmodel.  
+Welcome to the Thesis Assistant for SJ-K. This tool is designed to help you quickly understand the key points from the thesis without needing to read the entire document. Simply click on a predefined question or enter your own to get started.
+""")
 
-Den er sat til at se på data fra SJ-K.dk, men meningen med tiden er naturligvis at sætte den til at se på data fra folketinget.
-""", unsafe_allow_html=False)
-
-# Define your queries here
+# Predefined questions
 queries = {
     "What is SJ&K?": "What is SJ&K?",
     "How can they help me?": "How can they help me?",
@@ -95,18 +93,15 @@ queries = {
     "How can SJ&K help me understand the status of Danish politics?": "How can SJ&K help me understand the status of Danish politics?",
 }
 
-# Streamlit app layout
 st.markdown("""
-Tryk på et spørgsmål eller skriv dit eget spørgsmål i chatten nedenfor.
-""", unsafe_allow_html=False)
-
-
-
+### Select a Question
+Click on a question to get an answer, or type your own question in the input box below.
+""")
 
 # Initialize a variable to hold the selected query
 selected_query = None
 
-# Create buttons for each query
+# Create buttons for each predefined query
 for button_label, query in queries.items():
     if st.button(button_label):
         selected_query = query
@@ -114,51 +109,37 @@ for button_label, query in queries.items():
 
 # Check if a query has been selected
 if selected_query:
-    # Assuming get_answer function is defined as per your provided code
     answer = get_answer(selected_query)
-
-    # Display the selected query and the answer
-    st.write(f"Query: {selected_query}")
-    st.write("Answer:")
+    st.write(f"**Query:** {selected_query}")
+    st.write("**Answer:**")
     st.write(answer)
-else:
-    st.write("")
 
 # User input
-user_query = st.text_input("Ask your questions here (Preferably in English men dansk virker også):")
+user_query = st.text_input("Ask your questions here:")
 
 if user_query:
-    # Get answer from the conversational chain
     answer = get_answer(user_query)
-
-    # Display the answer
-    st.write("Query:")
+    st.write("**Query:**")
     st.write(user_query)
-    st.write("Answer:")
+    st.write("**Answer:**")
     st.write(answer)
-
 
 # Function to clear selection
 def clear_selection():
     st.session_state.selected_query = None
-
 
 st.markdown("____________________")
 
 if st.button("Clear"):
     clear_selection()
 
-
 # Read the contents of the file
 with open(txt_file_path, 'r', encoding='utf-8') as file:
     sjk_text = file.read()
 
 # Dropdown (expander) for displaying non-editable information
-with st.expander("For transparens: Se hvilken information jeg har puttet i modellen her:"):
+with st.expander("Transparency: See the information used in the model here:"):
     st.write(sjk_text)
-
-st.markdown("*Obs: Jeg har ikke taget noget om nyhedsbreve, media eller buzzed med.*")
-st.markdown("*Asterix: Jeg har inkluderet dette spørgsmål for at vise, at den ikke bare finder på noget tilfældigt*")
 
 
 
