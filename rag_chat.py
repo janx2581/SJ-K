@@ -117,16 +117,6 @@ st.markdown("____________________")
 if st.button("Clear"):
     clear_selection()
 
-# Read the contents of the files (for transparency)
-pdf_texts = []
-for file_path in pdf_file_paths:
-    pdf_texts.append(extract_text_from_pdf(file_path))
-
-# Dropdown (expander) for displaying non-editable information
-with st.expander("Transparency: See the information used in the model here:"):
-    for i, text in enumerate(pdf_texts):
-        st.markdown(f"**File {i + 1}: {pdf_file_paths[i]}**")
-        st.write(text)
 
 st.markdown("*Note: Information about newsletters, media, or buzz has been excluded.*")
 st.markdown("*Asterisk: This question is included to demonstrate that the model does not generate random answers.*")
