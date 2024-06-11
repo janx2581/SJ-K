@@ -1,0 +1,52 @@
+ 5.0  Konceptuel kombination af public affairs og 
+ GenAI 
+ Den sidste del af den konceptuelle kontekst binder public af fairs og GenAI sammen. 
+ Det  er  begrænset,  hvad  der  findes  af  forskning  om,  hvordan  public  affairs  kan  forbedres  via 
+ GenAI,  siden  GenAI  er  så  nyt.  Der  er  dog  to  relevante  forskningsartikler ,  der  er  værd  at 
+ fremhæve  vedrørende  dokumentklassifikation  og  prædiktiv  AI  med  henblik  på  forbedring  af 
+ public  affairs:  Aizenber g  og  Binderkranz  (2021)  og  Loftis  og  Mortensen  (2020).  Begge 
+ undersøger  muligheden  for  automatisk  at  mappe  interessegrupper  og  policy  dokumenter 
+ baseret  på  deres  optræden  i  nyheder ,  høringer  og  generelle  parlamentariske 
+ procesdokumenter .  Aizenber g  og  Binderkrantz  bruger  en  NER-tilgang  og  Loftis  og 
+ Mortensen  bruger  en  Naïve  Bayes-tilgang,  som  begge  er  prædiktive  AI-tilgange,  altså  den 
+ ‘traditionelle’  brug  af  AI  (Aizenber g  &  Binderkrantz,  2021,  Loftis  &  Mortensen,  2020).  De 
+ finder  begge,  at  ved  brug  af  deres  respektive  tilgange  er  der  stadig  mange  forkerte 
+ klassifikationer .  NER  klassificerer  korrekt  54  procent  af  gangene  og  Naïve  Bayes 
+ klassificerer korrekt 70 procent af gangene (ibid). 
+ Et  overblik  over  digitale  innovationsværktøjer  inden  for  public  affairs  findes  hos  Bitoni 
+ (2023).  Han  argumenterer  blandt  andet  for,  at  AI-analyse  til  videnshåndtering  spiller  en 
+ afgørende  rolle  i  transformationen  af  public  affairs  i  den  digitale  æra.  Han  går  dog  ikke  mere 
+ i  dybden  med  AI,  andet  end  at  man  kan  bruge  AI  til  at  danne  overblik  over  store  mængder  af 
+ data,  men  uden  at  være  mere  specifik  om,  hvilket  overblik  man  er  efter,  i  hvilket  data  og  med 
+ hvilken  AI-metode.  Han  påpeger ,  at  fremtidig  forskning  kunne  inkludere  “...the 
+ methodological  assessment  of  specific  technological  tools  (…)  in  actual  policy  cases,  also 
+ 31 
+ compared  with  other  more  traditional  tools”  (Bitoni,  2023).  Det  er  hvad  dette  speciale  sigter 
+ efter  at  undersøge:  en  vurdering  af  et  specifikt  teknologisk  redskab  og  deres  anvendelse  i 
+ public af fairs. 
+ 5.1  Kort  introduktion  til  andre  aktører,  der  automatisk  klassificerer  dokumenter 
+ fra Folketinget 
+ Selvom  der  ikke  er  meget  forskning,  der  har  undersøgt  dokumentklassifikation  i  public 
+ affairs,  er  der  en  række  aktører ,  der  forsøger  at  løse  samme  udfordring  som  AI-redskabet, 
+ som  er  dokumentklassifikation  af  parlamentariske  dokumenter .  Dette  validerer  relevansen  af 
+ dette speciale: 
+ Ulobby ,  der  er  kendt  som  den  største  og  mest  avancerede  aktør  inden  for  politisk 
+ monitorering  på  det  danske  marked,  benytter  prædiktiv  AI-tilgangen  topic  detection  til 
+ dokumentklassifikation. (Ulobby , 2024). 
+ Ritzau  Monitor  og  Overskrift.dk  monitorerer  ligeledes  politiske  dokumenter ,  men  anvender 
+ en  søgeordsbaseret  tilgang,  hvor  de  søger  efter  specifikke  ord  i  dokumenter ,  og  dermed  ikke 
+ bruger AI (Ritzau, 2024; Overskrift.dk, 2024). 
+ Internationalt  findes  der  organisationer  som  Fiscal  Note  og  Quorum,  der  også  opererer  inden 
+ for  overvågning  af  parlamentariske  dokumenter ,  hver  med  deres  egen  teknologiske  tilgang. 
+ Det er uklart, hvilken specifik teknologi de benytter (Fiscal Note, 2024 ; Quorum, 2024). 
+ Efter  en  samtale  med  Dansk  Standard  den  23.  april  blev  jeg  gjort  opmærksom  på  en  helt  ny 
+ aktør  inden  for  GenAI  og  public  affairs.  Det  er  Spaak.ai  (CVR  nummer  registreret  19.  januar 
+ 2024),  der  benytter  en  form  for  søgedatabase  og  GenAI  til  at  finde  dokumenter  fra 
+ Folketingets  hjemmeside  på  en  mere  sofistikeret  måde  end  blot  ved  brug  af  søgefunktionen 
+ på  Folketingets  hjemmeside  (Spaak.ai,  2024).  Det  er  altså  ikke  en  løbende  overvågning  af, 
+ hvad  der  sker  i  Folketinget,  som  den  AI-redskabet  tilbyder ,  men  snarere  en  database  med 
+ søgefunktion  drevet  af  GenAI.  Siden  Spaak.ai  også  beskæftiger  sig  med  GenAI  og  de  samme 
+ dokumenter  fra  Folketinget,  som  AI-redskabet,  er  det  en  yderligere  verificering  af  ideen  bag 
+ dette  speciale.  Dette  speciale  er  dermed  ikke  alene  om  ideen  om  at  bruge  GenAI  til  at 
+ forbedre public af fairs arbejdet i en dansk kontekst. 
+ 32  33 

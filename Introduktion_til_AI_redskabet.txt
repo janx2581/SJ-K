@@ -1,0 +1,130 @@
+ 2.0  Introduktion til AI-redskabet 
+ I  det  følgende  afsnit  introduceres  AI-redskabet.  Dette  gøres  inden  præsentationen  af  den 
+ konceptuelle  kontekst,  således  at  AI-redskabet  kan  sættes  i  relation  til  teorierne  og 
+ refleksionerne om public af fairs og GenAI. 
+ 2.1  AI-redskabet 
+ I  sin  essens  klassificerer  AI-redskabet  dokumenter  fra  Folketinget  alt  efter  om  de  er  relevante 
+ for  en  given  organisation.  Dokumenterne  er  parlamentariske  procesdokumenter ,  som  er  alle 
+ dokumenter , der bliver brugt i Folketingets arbejde. Helt præcist dækker det over: 
+ ➢  Forespør gsler 
+ ➢  Lovforslag 
+ ➢  Alm. del 
+ ➢  Beslutningsforslag 
+ ➢  Rådsmøde 
+ ➢  Kommissionsforslag 
+ ➢  Aktstykke 
+ ➢  Forslag til vedtagelse 
+ ➢  § 20-spør gsmål 
+ ➢  Redegørelse 
+ ➢  Alle bilag til alle dokumenter 
+ ➢  Høringer 
+ ➢  Pressemeddelelser 
+ Ved  relevante  dokumenter  menes  det,  at  det  er  dokumenter ,  der  er  inden  for  interesseområdet 
+ for or ganisationerne. 
+ 14 
+ Produktet  af  AI-redskabet  er  et  dokument  tilsendt  på  mail,  som  jeg  kalder 
+ monitor eringsrapporten  .  Monitoreringsrapporten  sendes  ud  enten  dagligt  eller  ugentligt  alt 
+ efter  organisationernes  ønsker .  Monitoreringsrapporten  indeholder  information  om  relevante 
+ dokumenter  såsom  titel  på  folketingssagen,  titel  på  dokumentet,  dato,  og  sprogmodellens 
+ begrundelse  for  hvorfor  dokumentet  er  relevant.  Et  eksempel  på  en  monitoreringsrapport  blev 
+ vist i indledningen og der er flere eksempler i bilag 2. 
+ Rent  teknisk  fungerer  AI-redskabet  ved  at  anvende  OpenAIs  GPT4  sprogmodel  til  at 
+ klassificere  dokumenterne  fra  Folketinget.  Derfor  kan  man  -  meget  forsimplet  -  forstå  det 
+ som  om,  at  AI-redskabet  har  automatiseret  processen  med  at  sende  dokumenter  fra 
+ Folketinget  gennem  ChatGPT ,  som  man  kender  fra  chatgpt.com.  AI-redskabet  markerer  ved 
+ tilgangen  om  at  bruge  sprogmodeller  til  databearbejdelse  et  skift  væk  fra  de  nuværende  søge- 
+ og  filtreringsmetoder  til  en  mere  sentimentbaseret  bearbejdelse  af  den  store  mængde  af 
+ tekstdata fra Folketinget. Sprogmodellers evne til at forstå sentimenter uddybes i afsnit 4.2. 
+ Udviklingen  af  AI-redskabet  gik  i  gang  i  november  2023,  da  en  ny  model  af  GPT4  blev 
+ lanceret,  som  var  billigere  og  bedre  end  eksisterende  sprogmodeller  (OpenAI,  2023).  Dette 
+ muliggjorde  udviklingen  af  AI-redskabet  i  overensstemmelse  med  de  ønskede  kvalitets-  og 
+ omkostningsparametre  1  . 
+ 2.1.1  Hvilket problem løser AI-redskabet 
+ AI-redskabet  har  til  mål  at  løse  problemet,  som  er,  at  der  er  rigtig  meget  tekstdata  -  altså 
+ dokumenter  -  i  public  affairs  arbejdet,  som  gør  det  umuligt  at  følge  med  i  det  hele.  De  fleste 
+ public  affairs  organisationer  bliver  opdateret  om,  hvad  der  sker  i  Folketinget,  gennem 
+ nyhedsbreve  fra  Folketinget  og  Folketingets  udvalg.  Konkret  følger  de  fleste  public  affairs 
+ organisationer  nyhedsbreve  fra  bestemte  udvalg,  som  er  relevante  for  deres  arbejde.  I 
+ nyhedsbrevene  kan  der  dog  være  meget  irrelevant  information  og  relevant  information  kan 
+ muligvis  være  i  nyhedsbreve  fra  andre  udvalg,  som  organisationerne  ikke  abonnerer  på.  Ved 
+ at  gennemgå  alle  parlamentariske  procesdokumenter ,  laver  AI-redskabet  en  oversigt  over  alle 
+ 1  Konkret  betød  det  at  prisen  for  udvikler-adgangen  til  GPT4  blev  nedsat  fra  30  dollars  per  million  tokens  (1 
+ token  ≈  4  bogstaver  eller  tegn  i  en  tekst)  til  10  dollars  per  million  tokens  i  efteråret  2023  mens  at  kvaliteten  af 
+ sprogmodellens  outputs  blev  øget  (OpenAI,  2023).  I  kroner  og  øre  betyder  det  en  reduktion  i  omkostningerne 
+ fra cirka 1500 kr om måneden til cirka 500 kr om måneden for AI-redskabet. 
+ 15  relevante  dokumenter  i  en  monitoreringsrapport  på  tværs  af  udvalg  for  at  gøre  public  affairs 
+ arbejdet lettere, mere overskueligt og mere grundigt. 
+ 2.1  Promptsystemet 
+ Der  anvendes  et  promptsystem,  der  formulerer  forespør gsler ,  som  kan  forsimples  til  ”Er  det 
+ her  dokument  relevant  for  organisation  X,  der  er  interesseret  i  Y?  Svar  ja  eller  nej  og  giv  en 
+ kort  begrundelse  hvorfor .”.  Dette  gør  det  muligt  for  sprogmodellen  at  klassificere  hvert 
+ dokument  i  relation  til  et  defineret  politisk  genstandsfelt,  baseret  på  forudbestemte  kriterier  af 
+ relevans,  som  fremgår  i  promptet.  Genstandsfeltet  skal  forstås  som  specifikke  politikområder , 
+ såsom  gymnasiesektoren,  maritim  dekarbonisering  osv.  For  klarhed  vises  et  prompt  i  sin 
+ helhed nedenfor . Det er et prompt for Danske Gymnasier: 
+ Du  er  ansat  i  en  organisation,  der  lever er  specialiser et  politisk  monitor ering  og  analyse  for 
+ aktør er  inden  for  uddannelsessektor en.  Din  klient,  Danske  Gymnasier ,  har  en  interesse  i 
+ Danmarks  gymnasiesektor ,  herunder  politikker ,  reformer ,  finansiering,  og  reguleringer ,  som 
+ kan  påvirke  gymnasieuddannelser ,  læringsmiljøer ,  elevvelfær d,  og  kvaliteten  af  undervisning. 
+ De  er  kun  interesser et  i  sager  om  SU  direkte  relater et  til  gymnasiesektor en.  Klienten  ønsker 
+ dybdegående  indsigt  i  politiske  tiltag,  lovgivningsmæssige  ændringer ,  og  offentlige  debatter , 
+ der  kan  have  konsekvenser  for  gymnasieskolernes  drift,  udvikling,  og  fremtid.  Danske 
+ Gymnasier  er  også  interesser et  i  LLMer  og  udviklingen  og  brugen  af  sprogmodeller .  For  hver 
+ politisk  udvikling,  du  identificer er,  skal  du  vurdere,  om  den  er  relevant  for  din  klient.  Svar  ja 
+ eller  nej,  og  giv  en  kort  forklaring  på,  hvorfor  udviklingen  er  af  betydning  for  klientens 
+ interesser  inden  for  gymnasiesektor en.  Fokuser  på  aspekter  som  ændringer  i 
+ uddannelsespolitik,  ny  lovgivning,  budgetaftaler ,  initiativer  for  elevtrivsel  og  -sundhed, 
+ teknologisk  integration  i  undervisningen,  og  eventuelle  tiltag  målrettet  lærernes 
+ arbejdsfor hold og kompetenceudvikling. Sagen:  *dokumentet  sættes ind her automatisk* 
+ Teknikker  til  udarbejdelse  af  prompts  forklares  i  afsnit  4.3  om  prompt-engineering.  I  bilag  3 
+ findes alle prompts for SJ&K, Zero Carbon Shipping, Dansk Standard og Danske Gymnasier . 
+ Hvert  prompt  er  blevet  udformet  af  mig  på  baggrund  af  den  information,  som  jeg  har  fået  fra 
+ organisationerne  om,  hvad  de  er  interesseret  i,  samt  ved  at  læse  om  deres  arbejde.  I  et 
+ indledende  møde  med  hver  organisationgav  de  indsigt  i,  hvilke  områder  de  ønskede 
+ 16  monitorering  af  og  en  mere  detaljeret  beskrivelse  af,  hvad  der  var  af  interesse  for  de  givne 
+ områder .  Gennem  iterativ  finjustering  af  promptet  via  feedback  fra  brugere  af  AI-redskabet, 
+ bliver  promptet  justeret  så  den  passer  bedre  til  brugernes  behov .  Den  iterative  finjustering  er 
+ kortlagt  i  bilag  4.  Overordnet  blev  promptet  ændret  tre  gange  for  Dansk  Standard  for  at 
+ minimere  falske  positiver .  Promptet  blev  ændret  én  gang  for  Danske  Gymnasier  for  at 
+ inkludere  dokumenter  om  sprogmodeller ,  som  er  af  interesse  for  Danske  Gymnasier . 
+ Promptet  blev  ikke  ændret  for  Zero  Carbon  Shipping  og  SJ&K.  Evalueringen  af  AI-redskabet 
+ tager højde for de skiftende prompts, som uddybes i analysen. 
+ 2.2  Detaljeret beskrivelse af arkitekturen i AI-redskabet 
+ AI-Redskabets  arkitektur  er  designet  til  at  integrere  og  analysere  data  fra  Folketingets 
+ procesdokumenter  fra  tre  kilder:  Folketingets  Åbne  Data,  Høringsportalen  og 
+ pressemeddelelsesdatabaser .  For  resten  af  specialet  bliver  de  tre  kilder  slået  sammen  og 
+ omtales  som  blot  som  “parlamentariske  procesdokumenter”  eller  blot  “dokumenter”.  En 
+ visualisering af AI-redskabets arkitektur ses nedenfor og den forklares efterfølgende: 
+ 17  Figur 3: Arkitekturen bag AI-redskabet 
+ 18 
+ 2.2.1  Folketinget flow: 
+ Dette  flow  begynder  med  at  indsamle  lovforslag,  betænkninger  og  andre  parlamentariske 
+ dokumenter fra Folketinget. 
+ Alle  dokumenter ,  der  bliver  lagt  op  på  Folketingets  hjemmeside,  bliver  uploadet  til  en 
+ database  for  alle  parlamentariske  procesdokumenter ,  som  AI-redskabet  har  adgang  til. 
+ Dokumenterne  er  tilknyttet  en  række  metadata  som  fx  sagstype,  som  bliver  formateret  til  et 
+ brugbart  format.  Dernæst  inkluderes  indholdet  af  dokumenterne  i  AI-redskabet,  hvorefter 
+ klassifikationen  sker.  AI-redskabet  looper  gennem  alle  dokumenter  for  hvert  prompt  og 
+ processerer  demgennem  GPT4  sprogmodellen.  Når  AI-redskabet  er  færdig  med  loopet,  er  der 
+ en  liste  over  alle  dokumenter  med  en  klassificering  om  hvorvidt  de  er  relevante,  hvor  der 
+ enten  står  “ja”  eller  “nej”,  samt  en  kort  begrundelse  for  klassificeringen.  For  en  mere  teknisk 
+ forklaring af dataforarbejdningen for dette flow , se bilag 5. 
+ 2.2.2  Høringer flow: 
+ De  to  andre  flows  er  simplere  end  ovenstående  flow,  fordi  der  ikke  kræves  lige  så  meget 
+ forarbejdning  af  dataen.  I  høringsflowet  hentes  data  fra  offentlige  høringer  gennem 
+ høringsportalen.dk.  AI-redskabet  indputter  data  fra  titlen  på  høringen  og  en  kort  beskrivelse 
+ af  høringen,  og  via  promptet  outputter  AI-redskabet  via  GPT4  sprogmodellen  enten  et  “ja” 
+ eller  “nej”  klassificering,  præcis  ligesom  i  ovenstående.  Der  loopes  gennem  alle  høringer , 
+ hvor AI-redskabet herefter får en liste over alle relevante høringer . 
+ 2.2.3  Pressemeddelelser flow: 
+ Dette  flow  fungerer  på  samme  måde  som  flowet  for  høringer ,  men  AI-redskaber  henter 
+ pressemeddelelser  fra  alle  ministeriernes  pressemeddelelsesdatabaser  i  stedet  og  inputter  data 
+ fra titlen og en kort beskrivelse af pressemeddelelsen. 
+ Ovenstående  tre  flows  sker  for  hvert  prompt.  Danske  Gymnasier  og  Zero  Carbon  Shipping 
+ har  hver  1  prompt  mens  Dansk  Standard  og  SJ&K  har  3  prompts.  Dette  skyldes  at  Dansk 
+ Standard  har  tre  områder  de  ønsker  at  monitorere,  og  SJ&K  har  3  klienter  med  hver  deres 
+ politikområde,  de  ønsker  at  monitorere.  Derfra  samles  alle  relevante  dokumenter  fra 
+ Folketings-flowet,  hørings-flowet  og  pressemeddelelser -flowet  for  hvert  prompt  i  én 
+ 19  monitoreringsrapport  til  hver  organisation.  Slutteligt  sendes  dette  ud  til  den  givne 
+ organisation via mail. Det hele sker automatisk. 
+ 20 

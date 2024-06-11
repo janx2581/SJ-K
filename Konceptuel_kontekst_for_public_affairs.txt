@@ -1,0 +1,113 @@
+ 3.0  Konceptuel kontekst for public affairs 
+ Den  konceptuelle  kontekst  er  delt  op  i  3  dele:  En  del  om  public  affairs  og  en  del  om  GenAI 
+ og en del der binder de to sammen. 
+ Første  del  af  den  konceptuelle  kontekst  om  public  affairs  starter  med  en  definition  og 
+ afgrænsning  af  emnet  public  affairs.  Dette  sætter  scenen  ved  at  præsentere  den  teoretiske 
+ ramme  for  public  affairs  gennem  en  definition  af  pluralismen  .  Dernæst  introduceres  et 
+ framework  for  hvordan  ressour cer  har  en  indflydelse  for  public  affairs,  som  efterfølges  af  et 
+ afsnit om konkrete overvejelser om, hvordan ressourcer kan benyttes i public af fairs. 
+ 3.1  Definition og afgrænsning af public affairs 
+ Konceptet  public  affairs  dækker  over  et  bredt  felt  omhandlende  organisationers  interaktion 
+ med  samfundet  og  den  politiske  arena,  da  public  affairs  som  disciplin  er  i  konstant  udvikling 
+ (Esbensen,  2007).  En  overordnet  definition  af  public  affairs  er:  “public  affairs  handler  om  at 
+ varetage  en  virksomhed  eller  organisations  interesser ,  i  forhold  til  en  politisk  dagsorden  og 
+ beslutningsproces, hvor den end måtte opstå” (ibid). 
+ En  mere  specifik  definition  finder  man  hos  William  D.  Oberman  (2008),  der  definerer  public 
+ affairs  som:  “a  dynamic  capability  whose  function  is  to  catalyse  latent  socio-political 
+ resources  into  operational  ones  that  can  be  used  in  pursuit  of  sustainable  competitive 
+ advantage.”.  Denne  forståelse  er  nyttig,  da  den  ser  public  affairs  som  en  kapacitet,  der  kan 
+ trække  på  ressourcer  for  at  opnå  et  mål.  En  public  affairs  organisation  kan  dermed  justere  og 
+ investere  i  kapaciteter  og  ressourcer  til  at  blive  bedre  til  public  affairs  arbejdet.  Denne 
+ forståelse  af  public  affairs  omhandlende  ressourcer  er  nyttig  for  dette  speciale,  da 
+ 21 
+ organisationerne,  der  bruger  AI-redskabet,  favner  bredt,  har  forskellige  mål  og  forskellige 
+ midler . 
+ Dette  speciale  benytter  begrebet  public  affairs,  men  begrebet  er  ofte  brugt  synonymt  eller  i 
+ forlængelse  af  “interessevaretagelse”,  som  har  positive  konnotationer ,  eller  “lobbyisme”,  som 
+ har  negative  konnotationer  (Esbensen,  2007).  Public  affairs  er  i  højere  grad  et  neutralt  begreb, 
+ hvorfor det er det  foretrukne begreb i dette speciale. 
+ 3.2  Teoretisk ramme for public affairs: Pluralisme og korporatisme 
+ I  den  teoretiske  ramme  for  public  affairs  i  Danmark  tegner  sig  et  skift  fra  korporatisme  til 
+ pluralisme  .  Korporatismen  karakteriseres  ved  en  tradition,  hvor  organisationer  bliver  formelt 
+ inddraget  i  det  politiske  arbejde  gennem  nævn,  råd,  trepartsforhandlinger  og 
+ kommissionsarbejde.  Denne  tilgang  har  historisk  set  muliggjort  en  direkte  indflydelse  til 
+ organisationerne på politiske beslutninger og lovgivning (Hegelund & Mose, 2013). 
+ I  modsætning  hertil  er  pluralismen,  som  er  ved  at  vinde  frem  som  den  dominerende  public 
+ affairs  tradition  i  Danmark,  og  er  den  teoretiske  ramme  i  dette  speciale  (ibid).  Pluralismen 
+ beskriver ,  at  public  affairs  organisationer  konkurrerer  indbyrdes  om  at  vinde 
+ beslutningstagernes  opmærksomhed,  som  er  begrænset  og  eftertragtet.  Denne  konkurrence 
+ handler  kort  sagt  om  kampen  om  at  definere  politiske  problemer  samt  de  foreslåede  løsninger 
+ til disse (ibid). 
+ Andre  omtaler  pluralisme  som  lobbyisme  ,  og  har  samme  skel  op  imod  korporatismen 
+ (Esbensen,  2012).  Lobbyisme  beskrives  i  lighed  med  pluralisme,  baseret  på  logikken  om,  at 
+ der  findes  mange  kanaler  til  at  blive  hørt  og  at  initiativet  ligger  hos  public  affairs 
+ organisationerne  samt  at  adgangen  til  beslutningstagere  er  åben  og  situationsbestemt 
+ (Esbensen,  2012).  Uanset  om  der  bruges  lobbyisme  eller  pluralisme  som  begreb,  fremstår  det, 
+ at der foregår en konkurrence mellem or ganisationer om at få indflydelse. 
+ Selvom  der  er  en  vis  uenighed  om,  hvordan  forholdet  mellem  pluralisme  og  korporatisme 
+ nøjagtigt  fordeler  sig,  er  det  tydeligt,  at  pluralismens  fremgang  fører  til  et  øget  fokus  på 
+ konkurrence  (Hegelund  &  Mose,  2013:  21).  Dette  skift  og  tilhørende  fokus  på  konkurrence 
+ kræver  af  organisationer ,  der  beskæftiger  sig  med  public  affairs,  at  de  udvikler  og  styrker 
+ deres evner til at opnå indflydelse i et stadig mere konkurrencepræget public af fairs landskab. 
+ 22  3.3  Afgrænsning  af  public  affairs  arbejdet  i  konteksten  af  dette 
+ speciale 
+ I  afgrænsningen  af  begrebet  public  affairs  inden  for  rammerne  af  dette  speciale  er  det 
+ væsentligt  at  præcisere  fokuspunktet.  Dette  speciale  fokuserer  på  det  informationsmæssige 
+ aspekt  af  public  affairs,  hvor  public  affairs  organisationer  skal  holde  sig  opdateret  på  politiske 
+ bevægelser  og  beslutninger ,  hvilket  er  afgørende  for  at  navigere  effektivt  i  det  politiske 
+ landskab.  Det  er  altså  et  helt  banalt,  men  grundlæggende  aspekt  af  public  affairs,  nemlig  at 
+ public  affairs  agenter  skal  være  opdaterede  omkring  aktiviteter  og  beslutninger  i  Folketinget 
+ (Esbensen,  2007).  Mack  (2005)  argumenterer  ligeledes,  at  de  universelle  komponenter  i  alle 
+ public  affairs  inkluderer  vidensindsamling  og  strategisk  planlægning.  AI-redskabet  er  netop 
+ designet som et værktøj til at understøtte denne form for informationsindsamling. 
+ Denne  afgrænsning  af  public  affairs  betyder  også,  at  to  meget  centrale  dele  af  public  affairs 
+ ikke  bliver  berørt.  De  to  centrale  dele  af  public  affairs  er  overførsel  af  viden  fra  public  affairs 
+ organisationer  til  beslutningstager e  og  netværk  .  De  bliver  kort  introduceret  nedenfor  samt  en 
+ forklaring på hvorfor de ikke inddrages i dette speciale. 
+ Overførsel  af  viden  fra  lobbyister  til  beslutningstagere  er  en  videnstransmission,  der  blandt 
+ andet  inkluderer  aktiviteter  som  regulatory  lobbying  (Weiler  &  Brändel,  2015),  legislative 
+ subsidy  (Hall  &  Deardorf f,  2006),  og  svingsdørslobbyisme  (Lapira  &  Thomas,  2014).  Disse 
+ begreber  omhandler  generelt  viden  og  information,  der  flyder  fra  public  affairs  organisationer 
+ til  beslutningstagere  (Binderkrantz  &  Christiansen,  2016).  Dette  er  ikke  fokuspunktet  for 
+ dette  speciale,  da  fokuspunktet  i  stedet  er  information  om  processerne  i  Folketinget,  der 
+ flyder  til  public af fairs or ganisationer . 
+ Et  andet  vigtigt  element  i  public  affairs  er  netværk.  Den  mest  effektive  public  affairs 
+ organisation  er  typisk  den,  der  har  det  stærkeste  netværk  (Milbrath,  1963;  Hegelund  &  Mose, 
+ 2013).  Netværk  er  per  definition  personbåret,  hvorfor  GenAI  ikke  kan  spille  en  direkte  rolle  i 
+ dette, hvorfor netværkskapaciteter ikke inkluderes i dette speciale. 
+ 23  3.4  Konceptuelt om ressourcer og værktøjer i public affairs 
+ Når  public  affairs  er  drevet  af  konkurrence,  og  at  en  vigtig  del  af  public  affairs  er  at  vide  hvad 
+ der  sker  i  Folketinget,  spiller  ressourcer  og  værktøjer  en  rolle  i  at  imødekomme  konkurrencen 
+ og  bearbejde  viden.  I  teorien  om  ressourcer  og  værktøjer  inden  for  public  affairs  fremhæver 
+ Oberman  (2008),  hvordan  public  affairs  ressourcer  kan  påvirke  konkurrencemæssige  fordele 
+ for  public  affairs  organisationer .  Oberman  argumenterer ,  at  public  affairs-indsatser  drejer  sig 
+ om  at  domesticere,  kapre  eller  optage  latente  ressour cer  for  at  skabe  organisatoriske 
+ ressour cer  .  Latente  ressourcer  dækker  over  offentlige  opinioner ,  uorganiserede  grupper  eller 
+ beslutningstagere  med  samme  holdning  som  en  selv,  hvor  alle  tre  ting  kan  mobiliseres  til 
+ egen  fordel.  Organisatoriske  ressourcer  er  de  ressourcer ,  der  direkte  påvirker  legitimiteten  og 
+ adgangen  til  beslutningsprocesser  og  indflydelse,  såsom  de  rigtige  kontakter  eller 
+ indflydelsesrige personer . 
+ Ved  at  omdanne  latente  ressourcer  til  organisatoriske  ressourcer  kan  public  affairs 
+ organisationer  influere  offentlig  politik  til  egne  strategiske  fordele  (Oberman,  2008)).  Det 
+ interessante  er,  at  evnen  til  at  omdanne  latente  ressourcer  til  organisatoriske  ressourcer  er 
+ betinget  af  katalytiske  ressour cer  ,  som  omfatter  en  organisations  økonomi,  struktur , 
+ ekspertise,  netværk,  organisering  og  værktøjer ,  hvor  især  det  sidste  er  af  essens  for  dette 
+ speciale  (ibid).  Derfor  kan  de  katalytiske  ressourcer  forstås  som  virksomhedens  public 
+ affairs-kapacitet  og  som  afgørende  for  at  kunne  gennemføre  succesfulde  public  affairs 
+ kampagner . 
+ 3.5  Konkrete  overvejelser  om  hvad  et  dokumentklassifikationsværktøj 
+ kan bidrage med i public affairs 
+ I  kernen  af  effektiv  public  affairs  ligger  evnen  til  at  være  informeret  og  strategisk  orienteret. 
+ Essensen  af  en  public  affairs  organisations  arbejde  er  at  kontinuerligt  opsamle  information  og 
+ være  opmærksom  på  politiske  bevægelser ,  en  aktivitet  der  kan  kaldes  politisk  monitor ering 
+ (Hedelund  &  Mose,  2013).  Kun  når  public  affairs  organisationer  er  informerede  og 
+ opmærksomme,  kan  de  bidrage  med  relevante  data,  analyser ,  og  argumenter .  Et 
+ dokumentklassificeringsværktøj kan netop understøtte evnen til politisk monitorering. 
+ 24  Udviklingen  af  public  affairs  strategier  kræver  dybdegående  kendskab  til  de  sager ,  der  er  på 
+ dagsordenen.  Den  formaliserede  og  strategiske  proces  for  at  samle  viden  i  forbindelse  med  en 
+ public  affairs  strategi  kaldes  for  mapping  eller  envir onment  scanning  (Esbensen,  2007; 
+ Windsor ,  2017).  Evnen  til  kontinuerligt  at  scanne  og  mappe  det  politiske  landskab  for 
+ relevante  sager  og  dokumenter  er  afgørende  for  at  kunne  navigere  effektivt  og  træffe 
+ informerede  beslutninger  om  public  affairs  strategier ,  som  et  dokumentklassifikationsværktøj 
+ også kan understøtte (W indsor , 2017). 
+ 25 

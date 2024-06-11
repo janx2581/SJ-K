@@ -1,0 +1,58 @@
+ 10.0  Anbefalinger 
+ 10.1  Anbefalinger  for  at  forbedre  GenAI  til  at  klassificere 
+ dokumenter: 
+ 1.  Mere  detaljeret  klassificering  ved  brug  af  prompt-engineering  som  few-shot  learning 
+ og større opdeling af prompts: 
+ ○  Eksempel:  Jf.  afsnit  4.5  om  few-shot  learning  for  at  finjustere  korrektheden  i 
+ dokumentklassifikationen,  kunne  dette  yderligere  optimeres  ved  at  definere 
+ eksempler  specifikt  målrettet  mod  specifikke  genstandsfelter  inden  for 
+ politiske  dokumenter .  For  eksempel  kunne  modellen  promptes  til  specifikt  at 
+ klassificere  dokumenter  om  henholdsvis  elevtrivsel,  karakterskalaen, 
+ udviklingen  af  nye  fag  osv,  som  hører  under  ungdomsuddannelser .  Jo  mindre 
+ genstandsfeltet  er  og  jo  mere  præcis  man  kan  være  med  few-shot  learning,  jo 
+ bedre. 
+ 2.  Relevansbaseret rangering af dokumenter: 
+ ○  Eksempel:  Man  kan  bruge  de  samme  teknikker  fra  few-shot 
+ learning-klassificering  til  at  rangere  dokumenter .  Man  kan  implementere  en 
+ ekstra  sprogmodel,  der  kan  vurdere  dokumenters  relevans.  Et  prompt  kunne 
+ være:  “Hvis  et  dokument  omhandler  x,  klassificeres  den  som  høj  prioritet,  og 
+ hvis en sag omhandler y , klassificeres den som lav prioritet” 
+ 3.  Få en sprogmodel til at evaluere sprogmodellen: 
+ ○  Eksempel:  Man  kan  få  en  anden  sprogmodel  til  at  evaluere  den  originale 
+ klassifikation.  Hvis  der  ikke  er  overensstemmelse,  skal  en  mitigation  strategi 
+ 87 
+ være,  at  få  en  ny  klassificering.  Et  simpelt  prompt  kunne  være:  “En 
+ sprogmodel  har  vurderet  om  hvorvidt  en  sag  er  relevant  for  organisation  x, 
+ som  er  interesseret  i  a,  b,  c.  Du  skal  vurdere  om  sprogmodellen  har  ret.  Sagen: 
+ *Information  om  sagen*.  Klassificeringen  fra  sprogmodellen: 
+ *Klassificeringen*.” 
+ 10.2  Anbefalinger  for  hvordan  man  kan  benytte  GenAI  på  andre 
+ måder: 
+ 1.  Byg en RAG-Model: 
+ ○  Eksempel:  Denne  model  kan  hjælpe  med  at  trække  information  fra  en  stor 
+ pulje  af  dokumenter  og  generere  svar  på  forespør gsler  baseret  på  disse 
+ dokumenter ,  specifikt  efter  brugerens  behov .  Behovene  kunne  være  et 
+ overbliksdokument  om  en  specifik  lovgivning  eller  en  analyse  af  udviklingen 
+ af omtalen om et politisk emne. 
+ 2.  Udvidelse af AI-redskabet til flere dokumenttyper: 
+ ○  Eksempel:  Udover  at  klassificere  dokumenter  fra  Folketinget,  kunne  værktøjet 
+ også  inkludere  klassificering  af  rapporter ,  budgetter ,  og  policy  papers.  Dette 
+ ville  give  public  affairs  organisationer  en  mere  holistisk  oversigt  over 
+ relevante politiske tiltag og strømninger , som kunne påvirke or ganisationerne. 
+ 10.3  Anbefalinger  for  hvordan  man  skal  have  in  mente  når  man 
+ implementerer GenAI løsninger i organisationer 
+ 1.  Personalisering af GenAI løsningen: 
+ ○  Eksempel:  Tilpas  brugerfladen  og  funktionaliteterne  i  en  GenAI-løsning  til  at 
+ møde  de  specifikke  behov  hos  hver  enkelt  organisation.  For  eksempel  kunne 
+ en  tilpasning  være  at  give  brugerne  mulighed  for  at  indstille  deres  egne 
+ kriterier  for,  hvad  der  udgør  relevante  dokumenter  baseret  på  deres  specifikke 
+ interesseområder ,  eller  at  bestemme  hvornår  og  hvordan  rapporterne  bliver 
+ udsendt. 
+ 2.  Design  GenAI  løsningen,  så  det  er  lettere  at  tracke  om  den  bliver  brugt  og  om  den 
+ leverer brugbare outputs. 
+ 88  ○  Eksempel:  I  tilfældet  af  AI-redskabet  kunne  en  metode  være  at  tracke,  om 
+ monitoreringsrapporten  blev  åbnet  og  hvornår  den  blev  åbnet,  samt  en 
+ funktion  for  at  lave  et  feedback-loop.  Et  feedback-loop  kunne  være  en 
+ vurdering  af  relevans  på  en  skala  fra  1-5  for  hvert  enkelt  dokument,  så  man 
+ lettere kan justere promptet. 
+ 89 

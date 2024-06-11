@@ -1,0 +1,147 @@
+ 1.0  Introduktion 
+ Generativ  AI  (GenAI)  er  et  af  de  mest  omtalte  emner  inden  for  teknologi  på  grund  af  dets 
+ evne  til  at  øge  produktivitet  og  kvalitet  i  forskellige  sektorer  ved  blandt  andet  at  kunne 
+ bearbejde  og  analysere  tekstdata  på  en  meningsfuld  måde  (Taubner  &  Weinhardt,  2023).  For 
+ eksempel  estimerer  McKinsey  (2023)  at  GenAI  kan  tilføje  mellem  2,6  billioner  og  4  billioner 
+ dollars  i  værdi  i  den  globale  økonomi.  Derudover  er  barriererne  til  at  benytte  GenAI  relativt 
+ lave  ift.  den  mere  ‘traditionelle’  form  for  AI,  siden  interaktionen  med  GenAI  sker  med 
+ menneskeligt  sprog  via  prompts  ,  og  der  dermed  ikke  er  det  samme  store  behov  for  at  hverken 
+ kunne kode eller regne for at drage nytte af GenAI. 
+ Inden  for  public  affairs  er  der  store  mængder  tekstdata  tilgængelig,  en  konstant  udviklende 
+ politisk  scene  og  mange  interesser ,  der  skal  varetages.  Derfor  er  det  vigtigt  for  public  affairs 
+ organisationer  at  være  velinformerede  om,  hvad  der  sker  i  Folketinget.  Især  i  en 
+ konkurrencepræget  public  affairs  scene,  hvor  mange  kæmper  om  beslutningstageres 
+ opmærksomhed,  er  behovet  for  at  kunne  bearbejde  enorme  mængder  data  stort,  da  det  kan 
+ være en konkurrenceparameter at være mest velinformeret (Esbensen, 2007). 
+ Kombinationen  af  GenAI’ s  evne  til  at  bearbejde  store  mængder  af  tekstdata  og  public  affairs 
+ organisationers  behov  for  at  være  ajour  på  udviklingen  i  Folketinget  leder  nysgerrigheden  hen 
+ til  hvordan  public  affairs  sektoren  potentielt  kan  få  en  del  af  den  enorme 
+ produktivitetsforøgelse  der  kan  ske  ved  at  benytte  GenAI  til  at  forstå  tekstdata.  Det  er  hvad 
+ dette speciale undersøger ved en konkret case. 
+ Dette  speciale  analyserer  en  case,  hvor  et  AI-redskab,  der  fungerer  som  et 
+ dokumentklassifikationsværktøj  ,  bruges  til  at  klassificere  dokumenter  fra  Folketinget  om 
+ hvorvidt  de  er  relevante  for  en  given  public  affairs  organisation.  AI-redskabet,  som  jeg  selv 
+ har  designet  og  sat  i  produktion,  baserer  sig  på  en  sprogmodel  ,  og  automatiserer 
+ klassificeringen  af  dokumenter .  Målet  med  AI-redskabet  er  at  give  public  affairs 
+ organisationer  et  kurateret  overblik  over  politiske  bevægelser  i  Folketinget  via  en 
+ monitor eringsrapport,  der  bliver  sendt  ud  til  organisationerne.  Monitoreringsrapporten 
+ indeholder  information  og  links  til  parlamentariske  procesdokumenter ,  der  er  relevante  for 
+ den  givne  organisation.  Parlamentariske  procesdokumenter  er  alle  dokumenter  fra 
+ 8  Folketinget.  Disse  dokumenter  omfatter  eksempelvis  lovforslag,  udvalgsspør gsmål, 
+ §20-spør gsmål og alle tilhørende bilag. Et udklip af en monitoreringsrapport ses nedenfor . 
+ Figur  1:  Eksempel  på  en  monitoreringsrapport  for  Danske  Gymnasier.  Udklip  af  de  første  2  sider  ud  af  4  fra  23. 
+ maj.  Afsnittene  for  enden  af  pilene  er  AI-redskabets  kreation,  som  er  en  begrundelse  for  relevans  for  de  enkelte 
+ dokumenter. 
+ AI-redskabet  er  udviklet,  fordi  standardværktøjet  for  public  affairs  organisationer  i  Danmark 
+ er  at  abonnere  på  nyhedsbreve  fra  udvalg  i  Folketinget  for  at  være  ajour .  Med  denne  tilgang 
+ risikerer  man  imidlertid  at  gå  glip  af  relevante  politiske  sager  og  dokumenter ,  hvis  de  falder 
+ uden  for  arbejdet  i  de  udvalg,  man  følger .  Ingen  organisationer  har  ressourcer  til  at  gennemgå 
+ alle  parlamentariske  procesdokumenter  og  følge  alle  udvalg.  Det  var  præcis  dette  der  skete 
+ for  mig  i  en  tidligere  beskæftigelse  i  Danske  Gymnasier ,  hvor  jeg  gik  glip  af  et  relevant 
+ udvalgsspør gsmål,  fordi  det  faldt  under  et  andet  udvalg  end  det  jeg  abonnerede  på.  Her  kan 
+ ny  teknologi  afhjælpe  dette  problem.  Dette  leder  hen  til  problemformuleringen  for  dette 
+ speciale: 
+ Hvilket potentiale er der i at anvende generativ AI – specifikt brugen af en spr ogmodel til 
+ dokumentklassifikation – til at forbedr e organisationers arbejde med public affairs? 
+ Problemformuleringen  antyder  en  optimistisk  forventning  om,  at  der  er  potentiale  ved  at 
+ benytte  GenAI.  Denne  forventning  står  dog  ikke  ukritisk,  da  den  er  baseret  på  en  række 
+ 9 
+ rapporter ,  der  påviser  GenAIs  potentiale  (McKinsey ,  2023;  EY,  2023;  BCG,  2023;  KPMG, 
+ 2023;  Chen  et  al.,  2023).  Det  betyder  at  dette  speciale  ikke  prioriterer  at  give  denne  positive 
+ antagelse  rygdækning,  men  i  stedet  søger  at  udforske  det  faktiske  potentiale  og  mulige 
+ forbedringer man kan finde i casen om AI-redskabet. 
+ For  at  besvare  problemformuleringen  tager  jeg  udgangspunkt  i  teorien  om  public  affairs 
+ traditionen  pluralisme  ,  som  fremstiller  public  affairs  scenen  i  Danmark  som 
+ konkurrencepræget,  hvor  public  affairs  organisationer  kæmper  om  indflydelse.  Dette 
+ teoretiske  fundament  styrkes  yderligere  af  et  ressour ceperspektiv  på  public  affairs,  hvor  den 
+ organisation  med  de  bedste  ressourcer ,  har  størst  mulighed  for  at  få  indflydelse,  hvor  blandt 
+ andet  public  affairs  værktøjer  kan  understøtte  organisationer  med  at  opnå  indflydelse.  For  at 
+ belyse  delen  af  problemformuleringen  om  GenAI  introduceres  teknologien  bag  GenAI  for  at 
+ skabe  en  forståelse  for  hvordan  det  virker  og  hvor  det  har  begrænsninger  og  efterfølgende 
+ introduceres  teknikken  prompt-engineering  for  at  skabe  klarhed  over  hvordan  man  kan 
+ maksimere  ydeevnen  for  GenAI.  Inden  for  GenAI  findes  det  der  hedder  en  sprogmodel,  og 
+ siden  AI-redskabet  er  drevet  af  en  sprogmodel,  fokuserer  dette  speciale  på  sprogmodeller ,  når 
+ der snakkes om GenAI. 
+ AI-redskabet  er  blevet  implementeret  i  fire  organisationer  i  løbet  af  specialeperioden. 
+ Gennem  en  evaluering  indsamles  empiri,  der  skal  bidrage  til  at  besvare 
+ problemformuleringen.  De  fire  organisationer  er:  Schultz  Jørgensen  &  K,  Mærsk  Mc-Kinney 
+ Møller  Center  for  Zero  Carbon  Shipping,  Dansk  Standard  og  Danske  Gymnasier .  Empirien 
+ indsamles både kvalitativt og kvantitativt. 
+ Helt  konkret  benyttes  en  procesbaser et  virkningsevaluerings  -tilgang  med  tilhørende 
+ programteori  for  at  belyse  AI-redskabets  ydeevne  i  organisationerne  (Dahler -Larsen,  2018). 
+ En  virkningsevaluering  er  nyttig  til  at  besvare  problemformuleringen,  fordi  denne  tilgang 
+ muliggør  at  undersøge  hvordan  og  hvorfor  AI-redskabet  potentielt  virker  (Dahler -Larsen, 
+ 2018).  Siden  dette  speciale  har  en  eksplorativ  karakter ,  er  det  netop  mekanismerne  ved 
+ brugen af AI-redskabet der er interessant med henblik på at besvare problemformuleringen. 
+ Problemformuleringen  afspejler  formålet  og  ambitionen  med  dette  speciale:  At  være  en  af  de 
+ første  undersøgelser  af,  hvordan  GenAI  kan  benyttes  i  public  affairs.  Der  er  stadig  et  uforløst 
+ potentiale  ved  brugen  af  GenAI,  som  dette  speciale  forsøger  at  kortlægge  via  en  konkret  case. 
+ 10  Dermed  kan  dette  speciale  forhåbentlig  være  til  nytte  for  andre,  der  har  interesse  i  at  benytte 
+ GenAI til at forbedre public af fairs. 
+ Valget  af  AI-redskabet  som  case  er  truffet  af  to  grunde:  For  det  første  er  GenAI  så  ny,  at  der 
+ ikke  findes  forskningsartikler  vedrørende  GenAI’ s  potentiale  til  at  forbedre  public  affairs. 
+ Derfor  er  valget  af  AI-redskabet  som  case  nyttigt,  da  det  dermed  er  muligt  at  indsamle  en  stor 
+ mængde  empiri,  der  ikke  ellers  eksisterer .  For  det  andet  blev  AI-redskabet  implementeret  i 
+ SJ&K  3  uger  før  specialets  start,  hvor  det  blev  godt  modtaget  (bilag  1).  Derfor  var  det  oplagt 
+ at  evaluere  AI-redskabet  yderligere  i  et  speciale,  så  andre  forhåbentligt  kan  blive  inspireret  til 
+ at  benytte  GenAI  i  deres  public  affairs  arbejde.  AI-redskabet  og  evalueringen  heraf  er  med 
+ andre ord mit bidrag til forskningsfeltet. 
+ Specialet  er  struktureret  på  følgende  måde:  Først  defineres  alle  væsentlige  ord  i 
+ problemformuleringen  for  at  opnå  begrebsklarhed.  Dernæst  introduceres  AI-redskabet,  dets 
+ formål  og  hvordan  det  teknisk  fungerer .  Dette  leder  hen  til  den  konceptuelle  kontekst,  som  er 
+ delt  op  i  tre  dele:  en  om  public  affairs,  en  om  GenAI  og  en  kombination  af  de  to  som  handler 
+ om  dokumentklassifikation  og  AI  i  public  affairs.  Efter  den  konceptuelle  kontekst 
+ præsenteres  de  organisationer ,  som  har  benyttet  AI-redskabet.  Herefter  følger  metodeafsnittet, 
+ som  indeholder  forklaringer  om  valget  af  procesbaseret  virkningsevaluering,  introduktionen 
+ af  programteorien,  en  diskussion  om  min  egen  rolle  i  dette  speciale,  samt  en  præsentation  af 
+ dataindsamling  og  -analysestrategi.  Metodeafsnittet  afsluttes  med  en  diskussion  om 
+ forskningskriterier .  Derfra  begynder  analysen,  som  er  en  stringent  udfyldning  af 
+ programteorien  vedrørende  AI-redskabets  ydeevne,  efterfulgt  af  en  præsentation  af  andre 
+ relevante  observationer  fra  dataindsamlingen,  som  faldt  uden  for  programteorien.  Efter 
+ analysen  følger  implikationsafsnittet,  hvor  det  diskuteres,  hvordan  AI-redskabet  kan 
+ forbedres,  hvordan  brugen  af  GenAI  konkret  kan  benyttes  på  en  anden  måde  end 
+ AI-redskabet,  samt  generelle  diskussioner  om  hvad  GenAI  har  af  implikationer  for  public 
+ affairs.  Derefter  følger  nogle  metodiske  diskussioner .  Specialet  afsluttes  med  anbefalinger  til 
+ at benytte GenAI i public af fairs og en konklusion med forslag til fremtidig forskning. 
+ Strukturen  i  specialet  kan  visualiseres  på  denne  måde,  som  bliver  vist  igen  gennem  specialet 
+ for at danne overblik. Jo bredere elementet i figuren er , jo mere abstrakt er pointerne. 
+ 11  Figur 2: Grafisk oversigt over specialet 
+ 1.1  Definition af alle væsentlige ord i problemformuleringen 
+ I  følgende  afsnit  gennemgås  alle  væsentlige  ord  i  problemformuleringen  for  begrebsklarhed. 
+ De to hovedbegreber “public af fairs” og “GenAI” defineres i et efterfølgende afsnit. 
+ 1.1.1  Potentiale 
+ Potentiale  forstås  som  både  konkrete  og  mulige  forbedringer  i  public  affairs,  som  kan 
+ sandsynliggøres  ved  at  evaluere  brugen  af  AI-redskabet.  Ved  at  benytte  ordet  “potentiale” 
+ opnås  et  vis  manøvrerum,  hvilket  er  væsentligt  for  dette  speciale,  der  omhandler  et  felt,  der  er 
+ nyt  og  under  konstant  udvikling.  Derudover  har  tidsbegrænsningen  for  specialeperioden  en 
+ betydning  for  hvor  længe  AI-redskabet  har  været  implementeret,  hvorfor  der  muligvis  ikke  er 
+ nok  data  til  at  kunne  konkludere  sikkert  på  forbedringer  ved  brug  af  GenAI.  Omvendt 
+ medfører  ordet  ”potentiale”  også,  at  argumenter  om  hvordan  GenAI  kan  bruges  til  at  forbedre 
+ public af fairs skal begrundes af evalueringen af AI-redskabet og tilhørende interviews. 
+ 1.1.2  Anvende 
+ Det er anvendelsen af det specifikke AI-redskab, der undersøges. 
+ 1.1.3  Brugen af en sprogmodel 
+ ”Brugen  af  en  sprogmodel”  forstås  som,  at  AI-redskabet  benytter  en  sprogmodel  som 
+ ‘motoren’  til  at  lave  klassifikationerne.  Derfor  er  det  ikke  brugen  af  for  eksempel  ChatGPT 
+ gennem chat.openai.com, der undersøges. 
+ 12 
+ 1.1.4  Dokumentklassifikation 
+ I  denne  problemformulering  betyder  dokumentklassifikation  processen  med  at  kategorisere 
+ parlamentariske  procesdokumenter  som  relevante  eller  ikke  relevante  for  en  given  public 
+ affairs  organisation  baseret  på  foruddefinerede  kriterier .  Helt  lavpraktisk  i  AI-redskabet  kan 
+ det  forstås  som  at  prompte  en  sprogmodel  til  at  svare  enten  ”ja”  eller  ”nej”  på  et  spørgsmål, 
+ der  kan  simplificeres  til:  ”Er  det  her  dokument  relevant  for  organisation  X,  der  er  interesseret 
+ i  Y?  Svar  ja  eller  nej  og  giv  en  kort  begrundelse  hvorfor .”.  Prompts  i  AI-redskabet  bliver 
+ defineret yderligere i afsnit 4.3. 
+ 1.1.5  Forbedre 
+ “Forbedre”  forstås  som  enhver  positiv  ændring  i  public  affairs  arbejdet,  hvilket  kan  omfatte 
+ forbedringer  i  effektivitet,  kvalitet  eller  overskuelighed.  Det  kan  dække  over  aspekter  som  at 
+ opnå  mere  viden,  spare  tid,  eller  på  anden  måde  optimere  processer  i  arbejdet  med  public 
+ affairs ved hjælp af GenAI. 
+ 1.1.6  Organisationers arbejde med public affairs 
+ Denne  del  af  problemformuleringen  omhandler  alle  organisationer ,  som  enten  bedriver  eller 
+ ønsker  at  bedrive  public  affairs.  Det  kan  være  public  affairs  konsulentbureauer , 
+ interesseor ganisationer ,  virksomheder ,  græsrodsbevægelser  og  lignende.  Derfor  er  denne  del 
+ af  problemformuleringen  en  indskrænkning  til  at  det  er  selve  arbejdet  med  public  affairs,  der 
+ undersøges i dette speciale og ikke public af fairs som koncept. 
+ 13 

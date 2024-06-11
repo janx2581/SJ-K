@@ -1,0 +1,176 @@
+ 6.0  Præsentation af organisationerne 
+ Dette  afsnit  starter  med  et  overblik  over  de  fire  organisationer ,  som  danner  grundlag  for 
+ evalueringen  af  AI-redskabet.  Dernæst  beskrives  hvordan  samarbejdet  mellem 
+ organisationerne og jeg er struktureret. 
+ 6.1  Organisationerne i dette speciale 
+ Organisationerne  er  Schultz  Jørgensen  &  K  (SJ&K),  Dansk  Standard,  Danske  Gymnasier  og 
+ Mærsk Mc-Kinney Møller Center for Zero Carbon Shipping (Zero Carbon Shipping). 
+ 6.1.1  SJ&K 
+ SJ&K  er  et  rådgivningsfirma,  der  fokuserer  på  strategi  og  kommunikation,  herunder  public 
+ affairs.  SJ&K  er  ledet  af  Kresten  Schultz  Jørgensen,  en  strategi  og  kommunikationsrådgiver 
+ med  baggrund  i  politik  og  kommunikation.  Inden  for  dette  speciale  kan  SJ&K  bidrage  med 
+ ekspertise  om  public  affairs  arbejde  for  en  række  af  deres  klienter .  SJ&K  er  interessante  for 
+ dette  speciale,  fordi  det  er  en  lille  organisation  med  mange  klienter ,  hvilket  betyder ,  at  der  er 
+ begrænset  kapacitet  til  at  være  opdateret  på,  hvad  der  sker  i  Folketinget.  Derfor  er  det 
+ interessant  at  undersøge  om  AI-redskabet  kan  bidrage  med  at  få  mere  relevant  viden  for  en 
+ organisation som SJ&K. 
+ 6.1.2 Zero Carbon Shipping 
+ Zero  Carbon  Shipping  er  et  not-for -profit  og  uafhængigt  R&D  center  med  målet  om  at 
+ decarbonisere  den  maritime  sektor .  Jan-Christoph  Napierski,  en  international  public  affairs 
+ chef  og  tidligere  diplomat,  har  hjulpet  med  evalueringen.  Det  skal  noteres,  at  Zero  Carbon 
+ 34 
+ Shipping  ikke  er  særligt  interesseret  i  dansk  politik,  da  de  er  en  international 
+ interesseor ganisation.  Det  betyder  at  de  sidste  monitoreringsrapporter ,  som  de  modtog,  kun 
+ var  filtreret  efter  EU-dokumenter ,  der  er  blevet  processeret  i  Folketinget.  Jeg  har  prioriteret  at 
+ have  dem  med  alligevel,  fordi  de  er  store  og  ressourcestærke,  hvorfor  det  kan  antages,  at  det 
+ er  en  top  public  affairs  organisation.  Med  andre  ord  er  Zero  Carbon  Shipping  inkluderet  for  at 
+ vurdere  om  AI-redskabet  er  nyttigt  uden  at  have  væsentlig  interesse  i  AI-redskabets  ydeevne. 
+ Derfor  fungerer  Zero  Carbon  Shipping  som  en  form  for  eksterne  public  affairs  ekspert  i  dette 
+ speciale.  Jeg  inkluderer  dog  Zero  Carbon  Shipping  i  evalueringen  på  samme  måde  som  de 
+ andre tre or ganisationer . 
+ 6.1.3  Dansk Standard 
+ Dansk  Standard  er  en  organisation,  der  arbejder  med  udviklingen  og  publiceringen  af 
+ standarder .  Andreas  Kaus  Jensen  er  head  of  public  affairs,  og  i  evalueringen  af  AI-værktøjet 
+ har  Anne  Sophie  Callesen  og  Søren  Malmbor g,  begge  public  affairs  konsulenter ,  også  givet 
+ input  via  mail.  Dansk  Standard  er  et  interessant  samarbejde  for  dette  speciale,  fordi  public 
+ affairs  arbejdet  vedrørende  standarder  er  meget  bredt  og  til  tider  diffust  (bilag  21).  Af  den 
+ grund  er  Dansk  Standard  en  least  likely  case  (Andersen  et  al.,  2012),  siden  de  selv  har  svært 
+ ved  præcist  at  definere  og  formulere  hvilke  sager  fra  Folketinget,  der  er  relevante  og  hvilke 
+ sager ,  der  ikke  er  (bilag  21).  Det  sætter  høje  krav  til  AI-redskabets  ydeevne,  da  det  dermed  er 
+ en kompleks klassifikation og prompt engineerings opgave. 
+ 6.1.4  Danske Gymnasier 
+ Danske  Gymnasier  er  en  interesseor ganisation,  der  varetager  interesserne  for  rektorer  på  stx 
+ og  hf  skoler .  Jenny  Bøving  Arendt,  direktør ,  Louise  Bülow ,  vicedirektør ,  og  Camilla  Huniche, 
+ politisk  chefkonsulent,  har  alle  deltaget  i  interviews  om  evalueringen  af  AI-redskabet. 
+ Danske  Gymnasier  er  interessant  for  dette  speciale  fordi  de  udgør  en  most  likely  case 
+ (Andersen  et  al.,  2012),  idet  politikområdet  for  ungdomsuddannelser  er  tydeligt  afgrænset  og 
+ relativt  småt  målt  på  antallet  af  relevante  dokumenter ,  hvilket  øger  sandsynligheden  for  at 
+ AI-redskabet  kan  klassificere  relevante  dokumenter ,  da  kompleksiteten  af  klassifikationen  er 
+ lavere og monitoreringsrapporterne er kortere. 
+ Danske  Gymnasier  er  også  en  most  likely  case  fordi  jeg  har  arbejdet  hos  dem  i  3  år,  så  jeg 
+ kender  arbejdsgangene  i  organisationen  og  jeg  ved  hvilke  parlamentariske  procesdokumenter , 
+ 35  der  kunne  have  relevans  for  Danske  Gymnasier .  Dette  øger  sandsynligheden  for  succes  for 
+ AI-redskabet,  både  substantielt  gennem  potentielt  skarpere  prompt  engineering  og 
+ designmæssigt  via  udformningen  af  monitoreringsrapporten.  Dette  diskuteres  yderligere  hvad 
+ det har af implikationer i afsnit 7.3. 
+ 6.2  Samarbejdet med de fire organisationer 
+ Disse  fire  organisationer  er  udvalgt  på  baggrund  af  både  tilgængelighed  og  en 
+ kvalitetsvurdering,  idet  jeg  har  søgt  samarbejde  med  nogle  af  de  dygtigste  aktører  inden  for 
+ deres  respektive  områder .  Med  tilgængelighed  menes  der,  at  det  er  organisationer ,  som  jeg 
+ allerede  har  en  vis  form  for  tilknytning  til,  som  uddybes  i  tabellen  nedenfor .  Ud  fra  en 
+ antagelse  om  at  en  evaluering  af  AI-redskabet  kræver  relativt  mange  ressourcer  hos 
+ organisationer ,  vurderede  jeg  at  sandsynligheden  for  at  finde  eksterne  samarbejdspartnere  var 
+ lille,  hvorfor  jeg  benyttede  mit  netværk.  Jeg  efterspør ger  nemlig  tre  ting  af  organisationerne: 
+ tre  interviews  á  en  times  varighed,  at  organisationerne  bruger  AI-redskabet  nok  til  at  der  kan 
+ laves  en  evaluering  og  en  form  for  økonomisk  kompensation,  da  det  ikke  er  gratis  at  køre 
+ AI-redskabet. 
+ At  benytte  organisationer ,  som  jeg  i  forvejen  har  en  relation  til,  medfører  selvsagt 
+ objektivitet-  og  bias-problemer ,  men  det  vurderes  at  problemformuleringen  og  muligheden 
+ for  at  indsamle  meget  empiri  om  et  emne,  som  det  er  svært  at  få  data  for,  vægter  højere  end 
+ fuld  objektivitet.  Det  diskuteres  i  afsnit  9.5.3  hvad  dette  har  af  betydning  for  specialets 
+ konklusioner . 
+ Samarbejdet  med  disse  organisationer  er  baseret  på  forskellige  grader  af  kompensation  alt 
+ efter  omstændighederne,  da  AI-redskabet  som  sagt  har  omkostninger  forbundet.  Det  koster 
+ omkring  500  kr  per  måned  per  prompt  alt  efter  hvor  mange  dokumenter  der  er  i  Folketinget. 
+ Jeg  har  bedt  om  kompensation  for  at  sikre  at  organisationerne  er  engageret  i  projektet  og  for 
+ at  sikre  den  økonomiske  bæredygtighed  af  dette  speciale.  Jeg  vil  gerne  gøre  klart,  at  jeg  ikke 
+ har tjent penge på dette speciale. 
+ For  transparensens  skyld  skal  det  også  siges,  at  jeg  forsøgte  først  at  kommercialisere 
+ AI-redskabet,  fordi  jeg  har  samme  formodning  som  i  det  her  speciale,  som  er,  at  der  er  værdi 
+ 36  i  at  benytte  GenAI  i  public  affairs.  SJ&K  betalte  et  lille  beløb  i  januar  for  at  få  lov  til  at  bruge 
+ AI-redskabet. Nu har jeg ‘trukket den af markedet’, og skriver et speciale om det i stedet. 
+ En oversigt over samarbejdet med or ganisationerne findes her: 
+ 37  Tabel 1: Oversigt over samarbejdet 
+ SJ&K  Zero Carbon 
+ Shipping  Dansk Standard  Danske Gymnasier 
+ Hvad ønsker de 
+ monitorering af (se 
+ bilag 29 for en præcis 
+ oversigt over hvad de 
+ ønsker monitorering 
+ af)  De har 3 klienter , 
+ som de modtager 
+ monitoreringer for: 
+ en techvirksomhed, 
+ der er interesseret i 
+ AI og digitalisering, 
+ en socialor ganisation, 
+ der er interesseret i 
+ socialpolitik og en 
+ food-cater 
+ organisation, der er 
+ interesseret i 
+ fødevarepolitik.*  Maritim 
+ dekarbonisering. De 
+ er mest interesseret i 
+ internationale forhold 
+ og ikke særligt 
+ interesseret i dansk 
+ politik  Standarder , og 
+ byggeri- og 
+ energisektoren i 
+ standardperspektiver  Ungdomsuddannelser 
+ og sprogmodeller til 
+ undervisningsbrug 
+ Hvad er min relation 
+ til dem?  Jeg er tilknyttet som 
+ ekstern konsulent. 
+ Jeg solgte  ideen om 
+ AI-redskabet til dem i 
+ november 2023 før 
+ jeg vidste jeg skulle 
+ skrive speciale om 
+ det og fik overført et 
+ lille beløb da 
+ AI-redskabet blev 
+ aktiveret for dme i 
+ januar .  Jeg kender 
+ Jan-Christoph 
+ gennem tidligere 
+ beskæftigelser og 
+ akademier  Jeg kender Andreas 
+ fra en jobsamtale  Jeg har arbejdet hos 
+ Danske Gymnasier i 
+ 3 år fra 2019 til 2022 
+ Hvornår blev 
+ AI-redskabet 
+ implementeret  4. januar . 
+ Er ikke sat til at blive 
+ afsluttet.  15. marts. 
+ Sluttede 4. april  15. marts. 
+ Sluttede 19. april  14. marts. 
+ Slutter 31. maj 
+ Hvor ofte får de 
+ monitoreringen  Hver fredag  Hver fredag  Hver fredag  Hver dag 
+ Finansieringsaftale  Betaler alle 
+ omkostninger  Betaler ingen 
+ omkostninger  Betaler alle 
+ omkostninger  Betaler halvdelen af 
+ omkostningerne 
+ Hvornår jeg for første 
+ gang tog kontakt til 
+ dem med henblik på 
+ specialesamarbejde  13. december 2023  28. februar 2024  22. februar 2024  26. februar 2024 
+ Hvornår har jeg haft 
+ møde med dem  Indledende møde: 13. 
+ december . 
+ Interview: 21. marts. 
+ Opfølgende 
+ spørgsmål: 1 1. april  Indledende møde: 28. 
+ februar 
+ Interviews: 12. marts, 
+ 12. april  Indledende møde: 6. 
+ marts 
+ Interviews: 21. marts 
+ 22. april  Indledende møde: 1 1 
+ marts. 
+ Interviews: 21. marts, 
+ 8. april, 30. april 
+ *  Jeg  har  underskr evet  en  fortrolighedserklæring  med  SJ&K,  så  jeg  kommer  til  at  omtale  deres  klienter  som 
+ “techvirksomheden”, “socialor ganisationen” og “fødevar evirksomheden”. 
+ Sammenfattende  kan  man  sige  at  denne  selektive  tilgang  til  udvælgelse  af  organisationer 
+ afspejler  både  projektets  ambitioner  og  de  praktiske  realiteter  ved  at  implementere  en  helt  ny 
+ løsning  i  forskellige  organisationer .  Gennem  disse  samarbejder  er  det  muligt  at  indsamle 
+ empiri,  der  kan  bidrage  til  en  evaluering  af  AI-redskabets  potentiale  og  begrænsninger  inden 
+ for public af fairs. 
+ 38  39 
