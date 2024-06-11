@@ -7,3 +7,4 @@ langchain[docarray]
 langchain_openai
 langchain_community
 streamlit
+pymupdf
