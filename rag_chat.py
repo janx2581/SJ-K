@@ -47,6 +47,9 @@ def get_answer(query, chat_history):
     result = conversation_chain({"question": query, "chat_history": chat_history})
     return result["answer"]
 
+def clear_chat_history():
+    st.session_state.messages = []
+
 # Streamlit app layout
 st.set_page_config(page_title="Thesis Assistant: SJ-K RAG Model", layout="wide")
 st.title("Thesis Assistant: SJ-K RAG Model")
@@ -57,6 +60,9 @@ Welcome to the Thesis Assistant for SJ-K. This tool is designed to help you quic
 # Initialize chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
+
+# Add a button to clear chat history
+st.button('Clear Chat History', on_click=clear_chat_history)
 
 # Display chat history
 for message in st.session_state.messages:
