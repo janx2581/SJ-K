@@ -43,7 +43,6 @@ conversation_chain = ConversationalRetrievalChain.from_llm(
     memory=memory
 )
 
-
 def get_answer(query):
     result = conversation_chain({"question": query})
     return result["answer"]
@@ -62,17 +61,18 @@ st.subheader("Chat with your thesis")
 if 'chat_history' not in st.session_state:
     st.session_state.chat_history = []
 
-# User input
-user_question = st.text_input("You:", key="input", placeholder="Ask a question about your thesis and press Enter")
-
 # Display chat history
 for chat in st.session_state.chat_history:
     st.write(f"**You:** {chat['question']}")
     st.write(f"**Assistant:** {chat['answer']}")
 
+# User input
+user_question = st.text_input("You:", key="input", placeholder="Ask a question about your thesis and press Enter")
+
 # Generate and display the answer
-if user_question:
+if user_question and st.session_state.input != "":
     with st.spinner("Thinking..."):
         answer = get_answer(user_question)
         st.session_state.chat_history.append({"question": user_question, "answer": answer})
+        st.session_state.input = ""  # Clear input field
         st.experimental_rerun()  # To update the chat history dynamically
