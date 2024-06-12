@@ -48,68 +48,26 @@ conversation_chain = ConversationalRetrievalChain.from_llm(
 
 def get_answer(query):
     result = conversation_chain({"question": query})
-    return result["answer"]
+    return result["answer"], memory.chat_history
 
+# Streamlit app setup
+st.set_page_config(page_title="Conversational QA System", layout="wide")
+st.title("Conversational QA System")
 
-    
-# Streamlit app layout
-st.title("Speciale RAG-model")
-st.markdown("""
-Velkommen til Jans speciale RAG-model. Det er et værktøj designet til hurtigt at forstå key points fra specialet uden at du skal læse hele specialet. Klik på et af sprøgsmålene nedenfor eller skriv dit eget i tekstfeltet nedenfor.
-""")
+# Display conversation history
+if "conversation_history" not in st.session_state:
+    st.session_state.conversation_history = []
 
-# Predefined questions
-queries = {
-    "Hvad er hovedkonklusionerne i specialet?": "Hvad er hovedkonklusionerne i specialet?",
-    "Hvilken metode er benyttet?": "Hvilken metode er benyttet?",
-    "Beskriv den konceptuelle kontekst for public affairs": "Beskriv den konceptuelle kontekst for public affairs",
-    "Hvilken rolle havde Mærsk McKinney Møller Center for Zero Carbon Shipping i specialet?": "Hvilken rolle havde Zero Carbon Shipping i specialet?",
-}
+query = st.text_input("Enter your question:")
 
-st.markdown("""
-### Select a Question
-Click on a question to get an answer, or type your own question in the input box below.
-""")
+if query:
+    answer, chat_history = get_answer(query)
+    st.session_state.conversation_history.append((query, answer))
 
-# Initialize a variable to hold the selected query
-selected_query = None
+    st.subheader("Conversation History")
+    for i, (user_query, bot_answer) in enumerate(st.session_state.conversation_history):
+        st.write(f"**You:** {user_query}")
+        st.write(f"**Bot:** {bot_answer}")
+        st.write("---")
 
-# Create buttons for each predefined query
-for button_label, query in queries.items():
-    if st.button(button_label):
-        selected_query = query
-        break  # Stop checking other buttons once one has been pressed
-
-# Check if a query has been selected
-if selected_query:
-    answer = get_answer(selected_query)
-    st.write(f"**Spørgsmål:** {selected_query}")
-    st.write("**Svar:**")
-    st.write(answer)
-
-# User input
-user_query = st.text_input("Stil dit spørgsmål her:")
-
-if user_query:
-    answer = get_answer(user_query)
-    st.write("**Spørgsmål:**")
-    st.write(user_query)
-    st.write("**Svar:**")
-    st.write(answer)
-
-# Function to clear selection
-def clear_selection():
-    st.session_state.selected_query = None
-
-st.markdown("____________________")
-
-if st.button("Ryd alt"):
-    clear_selection()
-
-# Read the contents of the file
-with open(txt_file_path, 'r', encoding='utf-8') as file:
-    sjk_text = file.read()
-
-# Dropdown (expander) for displaying non-editable information
-with st.expander("Transparency: See the information used in the model here:"):
-    st.write(sjk_text)
+st.text_area("Chat History", value="\n".join([f"You: {q}\nBot: {a}" for q, a in st.session_state.conversation_history]), height=400, disabled=True)
