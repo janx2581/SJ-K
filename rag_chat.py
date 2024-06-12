@@ -43,13 +43,6 @@ conversation_chain = ConversationalRetrievalChain.from_llm(
     memory=memory
 )
 
-def get_answer(query, chat_history):
-    result = conversation_chain({"question": query, "chat_history": chat_history})
-    return result["answer"]
-
-def clear_chat_history():
-    st.session_state.messages = []
-
 # Streamlit app layout
 st.title("Thesis Assistant: SJ-K RAG Model")
 st.markdown("""
