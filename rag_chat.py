@@ -77,4 +77,4 @@ st.subheader("Chat History")
 if 'chat_history' in st.session_state:
     for chat in st.session_state.chat_history:
         st.write(f"**You:** {chat['question']}")
-        st.write(f"**Assistant:** {chat['answer']}")e
+        st.write(f"**Assistant:** {chat['answer']}")
