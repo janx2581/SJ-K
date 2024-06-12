@@ -49,7 +49,7 @@ def get_answer(query):
 
 
 # Streamlit app layout
-st.title("Jan")
+st.title("John")
 st.markdown("""
 Welcome to the Thesis Assistant for SJ-K. This tool is designed to help you quickly understand the key points from the thesis without needing to read the entire document. Simply click on a predefined question or enter your own to get started.
 """)
