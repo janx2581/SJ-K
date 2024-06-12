@@ -38,23 +38,21 @@ llm = ChatOpenAI(temperature=0.7, model_name="gpt-3.5-turbo")
 memory = ConversationBufferMemory(memory_key='chat_history', return_messages=True)
 conversation_chain = ConversationalRetrievalChain.from_llm(
     llm=llm,
-    chain_type="stuff",
     retriever=vectorstore.as_retriever(),
     memory=memory
 )
 
 
 
-
 def get_answer(query):
     result = conversation_chain({"question": query})
-    return result["answer"], memory.chat_history
+    return result['answer'], result['chat_history']
 
 # Streamlit app setup
 st.set_page_config(page_title="Conversational QA System", layout="wide")
 st.title("Conversational QA System")
 
-# Display conversation history
+# Initialize session state for conversation history
 if "conversation_history" not in st.session_state:
     st.session_state.conversation_history = []
 
@@ -65,9 +63,11 @@ if query:
     st.session_state.conversation_history.append((query, answer))
 
     st.subheader("Conversation History")
-    for i, (user_query, bot_answer) in enumerate(st.session_state.conversation_history):
+    for user_query, bot_answer in st.session_state.conversation_history:
         st.write(f"**You:** {user_query}")
         st.write(f"**Bot:** {bot_answer}")
         st.write("---")
 
-st.text_area("Chat History", value="\n".join([f"You: {q}\nBot: {a}" for q, a in st.session_state.conversation_history]), height=400, disabled=True)
+# Display chat history in a read-only text area
+chat_history_text = "\n".join([f"You: {q}\nBot: {a}" for q, a in st.session_state.conversation_history])
+st.text_area("Chat History", value=chat_history_text, height=400, disabled=True)
