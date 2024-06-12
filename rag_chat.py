@@ -47,6 +47,7 @@ def get_answer(query):
     result = conversation_chain({"question": query})
     return result["answer"]
 
+
 # Streamlit app layout
 st.set_page_config(page_title="Thesis Assistant: SJ-K RAG Model", layout="wide")
 st.title("Thesis Assistant: SJ-K RAG Model")
@@ -54,25 +55,23 @@ st.markdown("""
 Welcome to the Thesis Assistant for SJ-K. This tool is designed to help you quickly understand the key points from the thesis without needing to read the entire document. Simply click on a predefined question or enter your own to get started.
 """)
 
-# Main area for chat
-st.subheader("Chat with your thesis")
-
 # Initialize chat history
-if 'chat_history' not in st.session_state:
-    st.session_state.chat_history = []
+if "messages" not in st.session_state:
+    st.session_state.messages = []
 
 # Display chat history
-for chat in st.session_state.chat_history:
-    st.write(f"**You:** {chat['question']}")
-    st.write(f"**Assistant:** {chat['answer']}")
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
 
 # User input
-user_question = st.text_input("You:", key="input", placeholder="Ask a question about your thesis and press Enter")
+if prompt := st.chat_input("What is up?"):
+    st.session_state.messages.append({"role": "user", "content": prompt})
+    with st.chat_message("user"):
+        st.markdown(prompt)
 
-# Generate and display the answer
-if user_question and st.session_state.input != "":
-    with st.spinner("Thinking..."):
-        answer = get_answer(user_question)
-        st.session_state.chat_history.append({"question": user_question, "answer": answer})
-        st.session_state.input = ""  # Clear input field
-        st.experimental_rerun()  # To update the chat history dynamically
+    with st.chat_message("assistant"):
+        with st.spinner("Thinking..."):
+            response = get_answer(prompt)
+            st.markdown(response)
+    st.session_state.messages.append({"role": "assistant", "content": response})
