@@ -58,7 +58,7 @@ Welcome to the Thesis Assistant for SJ-K. This tool is designed to help you quic
 # Predefined questions
 queries = {
     "What is SJ&K?": "What is SJ&K?",
-    "How can they help me?": "How can they help me?",
+    "Hvad er konklusionen?": "Hvad er konklusionen på specialet?",
     "What is the status of Danish politics?*": "What is the status of Danish politics?",
     "How can SJ&K help me understand the status of Danish politics?": "How can SJ&K help me understand the status of Danish politics?",
 }
