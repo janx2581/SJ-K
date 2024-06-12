@@ -53,17 +53,17 @@ def get_answer(query):
 
     
 # Streamlit app layout
-st.title("Thesis Assistant: SJ-K RAG Model")
+st.title("Speciale RAG-model")
 st.markdown("""
-Welcome to the Thesis Assistant for SJ-K. This tool is designed to help you quickly understand the key points from the thesis without needing to read the entire document. Simply click on a predefined question or enter your own to get started.
+Velkommen til Jans speciale RAG-model. Det er et værktøj designet til hurtigt at forstå key points fra specialet uden at du skal læse hele specialet. Klik på et af sprøgsmålene nedenfor eller skriv dit eget i tekstfeltet nedenfor.
 """)
 
 # Predefined questions
 queries = {
-    "What is SJ&K?": "What is SJ&K?",
-    "How can they help me?": "How can they help me?",
-    "What is the status of Danish politics?*": "What is the status of Danish politics?",
-    "How can SJ&K help me understand the status of Danish politics?": "How can SJ&K help me understand the status of Danish politics?",
+    "Hvad er hovedkonklusionerne i specialet?": "Hvad er hovedkonklusionerne i specialet?",
+    "Hvilken metode er benyttet?": "Hvilken metode er benyttet?",
+    "Beskriv den konceptuelle kontekst for public affairs": "Beskriv den konceptuelle kontekst for public affairs",
+    "Hvilken rolle havde Mærsk McKinney Møller Center for Zero Carbon Shipping i specialet?": "Hvilken rolle havde Zero Carbon Shipping i specialet?",
 }
 
 st.markdown("""
