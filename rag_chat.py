@@ -12,7 +12,8 @@ from langchain.indexes import VectorstoreIndexCreator
 from langchain_experimental.agents.agent_toolkits.csv.base import create_csv_agent
 from langchain.agents.agent_types import AgentType
 import tiktoken
-from langchain_openai import ChatOpenAI
+#from langchain_openai import ChatOpenAI
+from langchain_community.chat_models import ChatOpenAI
 import openai
 import os
 from langchain.text_splitter import CharacterTextSplitter
