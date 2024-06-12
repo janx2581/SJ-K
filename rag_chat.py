@@ -34,7 +34,7 @@ vectorstore = FAISS.from_documents(data, embedding=embeddings)
 
 # Create conversation chain
 llm = ChatOpenAI(temperature=0.7, model_name="gpt-3.5-turbo")
-# llm = ChatOpenAI(temperature=0.7, model_name="gpt-4") # if important for performance
+# llm = ChatOpenAI(temperature=0.7, model_name="gpt-4")  # Uncomment if using GPT-4
 memory = ConversationBufferMemory(memory_key='chat_history', return_messages=True)
 conversation_chain = ConversationalRetrievalChain.from_llm(
     llm=llm,
@@ -46,7 +46,6 @@ conversation_chain = ConversationalRetrievalChain.from_llm(
 def get_answer(query):
     result = conversation_chain({"question": query})
     return result["answer"]
-
 
 # Streamlit app layout
 st.set_page_config(page_title="Thesis Assistant: SJ-K RAG Model", layout="wide")
