@@ -50,26 +50,66 @@ def get_answer(query):
     result = conversation_chain({"question": query})
     return result["answer"]
 
-# Streamlit app setup
-st.set_page_config(page_title="Conversational QA System", layout="wide")
-st.title("Conversational QA System")
 
-# Initialize session state for conversation history
-if "conversation_history" not in st.session_state:
-    st.session_state.conversation_history = []
 
-query = st.text_input("Enter your question:")
+# Streamlit app layout
+st.title("Thesis Assistant: SJ-K RAG Model")
+st.markdown("""
+Welcome to the Thesis Assistant for SJ-K. This tool is designed to help you quickly understand the key points from the thesis without needing to read the entire document. Simply click on a predefined question or enter your own to get started.
+""")
 
-if query:
-    answer, chat_history = get_answer(query)
-    st.session_state.conversation_history.append((query, answer))
+# Predefined questions
+queries = {
+    "What is SJ&K?": "What is SJ&K?",
+    "How can they help me?": "How can they help me?",
+    "What is the status of Danish politics?*": "What is the status of Danish politics?",
+    "How can SJ&K help me understand the status of Danish politics?": "How can SJ&K help me understand the status of Danish politics?",
+}
 
-    st.subheader("Conversation History")
-    for user_query, bot_answer in st.session_state.conversation_history:
-        st.write(f"**You:** {user_query}")
-        st.write(f"**Bot:** {bot_answer}")
-        st.write("---")
+st.markdown("""
+### Select a Question
+Click on a question to get an answer, or type your own question in the input box below.
+""")
 
-# Display chat history in a read-only text area
-chat_history_text = "\n".join([f"You: {q}\nBot: {a}" for q, a in st.session_state.conversation_history])
-st.text_area("Chat History", value=chat_history_text, height=400, disabled=True)
+# Initialize a variable to hold the selected query
+selected_query = None
+
+# Create buttons for each predefined query
+for button_label, query in queries.items():
+    if st.button(button_label):
+        selected_query = query
+        break  # Stop checking other buttons once one has been pressed
+
+# Check if a query has been selected
+if selected_query:
+    answer = get_answer(selected_query)
+    st.write(f"**Query:** {selected_query}")
+    st.write("**Answer:**")
+    st.write(answer)
+
+# User input
+user_query = st.text_input("Ask your questions here:")
+
+if user_query:
+    answer = get_answer(user_query)
+    st.write("**Query:**")
+    st.write(user_query)
+    st.write("**Answer:**")
+    st.write(answer)
+
+# Function to clear selection
+def clear_selection():
+    st.session_state.selected_query = None
+
+st.markdown("____________________")
+
+if st.button("Clear"):
+    clear_selection()
+
+# Read the contents of the file
+with open(txt_file_path, 'r', encoding='utf-8') as file:
+    sjk_text = file.read()
+
+# Dropdown (expander) for displaying non-editable information
+with st.expander("Transparency: See the information used in the model here:"):
+    st.write(sjk_text)
