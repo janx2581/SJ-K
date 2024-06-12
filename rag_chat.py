@@ -43,9 +43,13 @@ conversation_chain = ConversationalRetrievalChain.from_llm(
     memory=memory
 )
 
+# Load abstract as system prompt
+abstract_file_path = 'Abstract_dansk.txt'
+with open(abstract_file_path, 'r', encoding='utf-8') as file:
+    system_prompt = file.read()
 
 def get_answer(query):
-    result = conversation_chain({"question": query})
+    result = conversation_chain({"question": query, "system_prompt": system_prompt})
     return result["answer"]
     
 # Streamlit app layout
