@@ -45,11 +45,9 @@ conversation_chain = ConversationalRetrievalChain.from_llm(
 
 
 
-
 def get_answer(query):
     result = conversation_chain({"question": query})
     return result["answer"]
-
 
 # Streamlit app layout
 st.set_page_config(page_title="Thesis Assistant: SJ-K RAG Model", layout="wide")
@@ -58,31 +56,25 @@ st.markdown("""
 Welcome to the Thesis Assistant for SJ-K. This tool is designed to help you quickly understand the key points from the thesis without needing to read the entire document. Simply click on a predefined question or enter your own to get started.
 """)
 
-# Sidebar for user input
-st.sidebar.header("Ask a question")
-user_question = st.sidebar.text_area("Enter your question here", height=100)
-if st.sidebar.button("Get Answer"):
+# Main area for user input and chat history
+st.subheader("Ask a question")
+user_question = st.text_area("Enter your question here", height=100)
+
+if st.button("Get Answer"):
     if user_question:
         with st.spinner("Generating answer..."):
             answer = get_answer(user_question)
-            st.sidebar.write("### Answer")
-            st.sidebar.write(answer)
+            if 'chat_history' not in st.session_state:
+                st.session_state.chat_history = []
+            st.session_state.chat_history.append({"question": user_question, "answer": answer})
+            st.write("### Answer")
+            st.write(answer)
     else:
-        st.sidebar.warning("Please enter a question before clicking the button.")
-
-# Main area for chat history
-st.subheader("Chat History")
-if 'chat_history' not in st.session_state:
-    st.session_state.chat_history = []
+        st.warning("Please enter a question before clicking the button.")
 
 # Display chat history
-for chat in st.session_state.chat_history:
-    st.write(f"**You:** {chat['question']}")
-    st.write(f"**Assistant:** {chat['answer']}")
-
-# Function to update chat history
-def update_chat_history(question, answer):
-    st.session_state.chat_history.append({"question": question, "answer": answer})
-
-# Input box for user to ask questions
-st.text_input("Ask another question:", key="input_question", on_change=lambda: update_chat_history(st.session_state.input_question, get_answer(st.session_state.input_question)))
+st.subheader("Chat History")
+if 'chat_history' in st.session_state:
+    for chat in st.session_state.chat_history:
+        st.write(f"**You:** {chat['question']}")
+        st.write(f"**Assistant:** {chat['answer']}")e
