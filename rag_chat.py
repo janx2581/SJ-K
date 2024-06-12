@@ -44,16 +44,16 @@ conversation_chain = ConversationalRetrievalChain.from_llm(
 )
 
 # Streamlit app layout
-st.title("Thesis Assistant: SJ-K RAG Model")
+st.title("Thesis Assistant: JAN-RAG Model")
 st.markdown("""
-Welcome to the Thesis Assistant for Jans. This tool is designed to help you quickly understand the key points from the thesis without needing to read the entire document. Simply click on a predefined question or enter your own to get started.
+Welcome to the Thesis Assistant for SJ-K. This tool is designed to help you quickly understand the key points from the thesis without needing to read the entire document. Simply click on a predefined question or enter your own to get started.
 """)
 
 # Predefined questions
 queries = {
     "What is SJ&K?": "What is SJ&K?",
     "How can they help me?": "How can they help me?",
-    "What is the status of Danish politics?": "What is the status of Danish politics?",
+    "What is the status of Danish politics?*": "What is the status of Danish politics?",
     "How can SJ&K help me understand the status of Danish politics?": "How can SJ&K help me understand the status of Danish politics?",
 }
 
