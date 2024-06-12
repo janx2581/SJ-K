@@ -83,18 +83,18 @@ for button_label, query in queries.items():
 # Check if a query has been selected
 if selected_query:
     answer = get_answer(selected_query)
-    st.write(f"**Query:** {selected_query}")
-    st.write("**Answer:**")
+    st.write(f"**Spørgsmål:** {selected_query}")
+    st.write("**Svar:**")
     st.write(answer)
 
 # User input
-user_query = st.text_input("Ask your questions here:")
+user_query = st.text_input("Stil dit spørgsmål her:")
 
 if user_query:
     answer = get_answer(user_query)
-    st.write("**Query:**")
+    st.write("**Spørgsmål:**")
     st.write(user_query)
-    st.write("**Answer:**")
+    st.write("**Svar:**")
     st.write(answer)
 
 # Function to clear selection
@@ -103,7 +103,7 @@ def clear_selection():
 
 st.markdown("____________________")
 
-if st.button("Clear"):
+if st.button("Ryd alt"):
     clear_selection()
 
 # Read the contents of the file
