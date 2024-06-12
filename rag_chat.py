@@ -38,15 +38,17 @@ llm = ChatOpenAI(temperature=0.7, model_name="gpt-3.5-turbo")
 memory = ConversationBufferMemory(memory_key='chat_history', return_messages=True)
 conversation_chain = ConversationalRetrievalChain.from_llm(
     llm=llm,
+    chain_type="stuff",
     retriever=vectorstore.as_retriever(),
     memory=memory
 )
 
 
 
+
 def get_answer(query):
     result = conversation_chain({"question": query})
-    return result['answer'], result['chat_history']
+    return result["answer"]
 
 # Streamlit app setup
 st.set_page_config(page_title="Conversational QA System", layout="wide")
