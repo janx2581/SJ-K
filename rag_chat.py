@@ -43,8 +43,8 @@ conversation_chain = ConversationalRetrievalChain.from_llm(
     memory=memory
 )
 
-def get_answer(query):
-    result = conversation_chain({"question": query})
+def get_answer(query, chat_history):
+    result = conversation_chain({"question": query, "chat_history": chat_history})
     return result["answer"]
 
 # Streamlit app layout
@@ -71,6 +71,7 @@ if prompt := st.chat_input("What is up?"):
 
     with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
-            response = get_answer(prompt)
+            chat_history = [{"role": m["role"], "content": m["content"]} for m in st.session_state.messages]
+            response = get_answer(prompt, chat_history)
             st.markdown(response)
     st.session_state.messages.append({"role": "assistant", "content": response})
