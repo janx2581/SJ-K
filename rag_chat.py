@@ -44,7 +44,7 @@ conversation_chain = ConversationalRetrievalChain.from_llm(
 )
 
 # Load abstract
-abstract_file_path = 'abstract.txt'
+abstract_file_path = 'Abstract_dansk.txt'
 with open(abstract_file_path, 'r', encoding='utf-8') as file:
     abstract = file.read()
 
