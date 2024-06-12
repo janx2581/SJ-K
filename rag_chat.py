@@ -51,65 +51,38 @@ def get_answer(query):
     return result["answer"]
 
 
-
 # Streamlit app layout
+st.set_page_config(page_title="Thesis Assistant: SJ-K RAG Model", layout="wide")
 st.title("Thesis Assistant: SJ-K RAG Model")
 st.markdown("""
 Welcome to the Thesis Assistant for SJ-K. This tool is designed to help you quickly understand the key points from the thesis without needing to read the entire document. Simply click on a predefined question or enter your own to get started.
 """)
 
-# Predefined questions
-queries = {
-    "What is SJ&K?": "What is SJ&K?",
-    "How can they help me?": "How can they help me?",
-    "What is the status of Danish politics?*": "What is the status of Danish politics?",
-    "How can SJ&K help me understand the status of Danish politics?": "How can SJ&K help me understand the status of Danish politics?",
-}
+# Sidebar for user input
+st.sidebar.header("Ask a question")
+user_question = st.sidebar.text_area("Enter your question here", height=100)
+if st.sidebar.button("Get Answer"):
+    if user_question:
+        with st.spinner("Generating answer..."):
+            answer = get_answer(user_question)
+            st.sidebar.write("### Answer")
+            st.sidebar.write(answer)
+    else:
+        st.sidebar.warning("Please enter a question before clicking the button.")
 
-st.markdown("""
-### Select a Question
-Click on a question to get an answer, or type your own question in the input box below.
-""")
+# Main area for chat history
+st.subheader("Chat History")
+if 'chat_history' not in st.session_state:
+    st.session_state.chat_history = []
 
-# Initialize a variable to hold the selected query
-selected_query = None
+# Display chat history
+for chat in st.session_state.chat_history:
+    st.write(f"**You:** {chat['question']}")
+    st.write(f"**Assistant:** {chat['answer']}")
 
-# Create buttons for each predefined query
-for button_label, query in queries.items():
-    if st.button(button_label):
-        selected_query = query
-        break  # Stop checking other buttons once one has been pressed
+# Function to update chat history
+def update_chat_history(question, answer):
+    st.session_state.chat_history.append({"question": question, "answer": answer})
 
-# Check if a query has been selected
-if selected_query:
-    answer = get_answer(selected_query)
-    st.write(f"**Query:** {selected_query}")
-    st.write("**Answer:**")
-    st.write(answer)
-
-# User input
-user_query = st.text_input("Ask your questions here:")
-
-if user_query:
-    answer = get_answer(user_query)
-    st.write("**Query:**")
-    st.write(user_query)
-    st.write("**Answer:**")
-    st.write(answer)
-
-# Function to clear selection
-def clear_selection():
-    st.session_state.selected_query = None
-
-st.markdown("____________________")
-
-if st.button("Clear"):
-    clear_selection()
-
-# Read the contents of the file
-with open(txt_file_path, 'r', encoding='utf-8') as file:
-    sjk_text = file.read()
-
-# Dropdown (expander) for displaying non-editable information
-with st.expander("Transparency: See the information used in the model here:"):
-    st.write(sjk_text)
+# Input box for user to ask questions
+st.text_input("Ask another question:", key="input_question", on_change=lambda: update_chat_history(st.session_state.input_question, get_answer(st.session_state.input_question)))
