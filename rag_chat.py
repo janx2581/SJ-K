@@ -49,6 +49,10 @@ def get_answer(query):
     result = conversation_chain({"question": query})
     return result["answer"]
 
+def get_answer(query):
+    result = conversation_chain({"question": query})
+    return result["answer"]
+
 # Streamlit app layout
 st.set_page_config(page_title="Thesis Assistant: SJ-K RAG Model", layout="wide")
 st.title("Thesis Assistant: SJ-K RAG Model")
@@ -56,25 +60,24 @@ st.markdown("""
 Welcome to the Thesis Assistant for SJ-K. This tool is designed to help you quickly understand the key points from the thesis without needing to read the entire document. Simply click on a predefined question or enter your own to get started.
 """)
 
-# Main area for user input and chat history
-st.subheader("Ask a question")
-user_question = st.text_area("Enter your question here", height=100)
+# Main area for chat
+st.subheader("Chat with your thesis")
 
-if st.button("Get Answer"):
-    if user_question:
-        with st.spinner("Generating answer..."):
-            answer = get_answer(user_question)
-            if 'chat_history' not in st.session_state:
-                st.session_state.chat_history = []
-            st.session_state.chat_history.append({"question": user_question, "answer": answer})
-            st.write("### Answer")
-            st.write(answer)
-    else:
-        st.warning("Please enter a question before clicking the button.")
+# Initialize chat history
+if 'chat_history' not in st.session_state:
+    st.session_state.chat_history = []
+
+# User input
+user_question = st.text_input("You:", key="input", placeholder="Ask a question about your thesis and press Enter")
 
 # Display chat history
-st.subheader("Chat History")
-if 'chat_history' in st.session_state:
-    for chat in st.session_state.chat_history:
-        st.write(f"**You:** {chat['question']}")
-        st.write(f"**Assistant:** {chat['answer']}")
+for chat in st.session_state.chat_history:
+    st.write(f"**You:** {chat['question']}")
+    st.write(f"**Assistant:** {chat['answer']}")
+
+# Generate and display the answer
+if user_question:
+    with st.spinner("Thinking..."):
+        answer = get_answer(user_question)
+        st.session_state.chat_history.append({"question": user_question, "answer": answer})
+        st.experimental_rerun()  # To update the chat history dynamically
