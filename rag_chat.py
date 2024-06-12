@@ -51,33 +51,63 @@ def clear_chat_history():
     st.session_state.messages = []
 
 # Streamlit app layout
-st.set_page_config(page_title="Thesis Assistant: SJ-K RAG Model", layout="wide")
 st.title("Thesis Assistant: SJ-K RAG Model")
 st.markdown("""
 Welcome to the Thesis Assistant for SJ-K. This tool is designed to help you quickly understand the key points from the thesis without needing to read the entire document. Simply click on a predefined question or enter your own to get started.
 """)
 
-# Initialize chat history
-if "messages" not in st.session_state:
-    st.session_state.messages = []
+# Predefined questions
+queries = {
+    "What is SJ&K?": "What is SJ&K?",
+    "How can they help me?": "How can they help me?",
+    "What is the status of Danish politics?": "What is the status of Danish politics?",
+    "How can SJ&K help me understand the status of Danish politics?": "How can SJ&K help me understand the status of Danish politics?",
+}
 
-# Add a button to clear chat history
-st.button('Clear Chat History', on_click=clear_chat_history)
+st.markdown("""
+### Select a Question
+Click on a question to get an answer, or type your own question in the input box below.
+""")
 
-# Display chat history
-for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
-        st.markdown(message["content"])
+# Initialize a variable to hold the selected query
+selected_query = None
+
+# Create buttons for each predefined query
+for button_label, query in queries.items():
+    if st.button(button_label):
+        selected_query = query
+        break  # Stop checking other buttons once one has been pressed
+
+# Check if a query has been selected
+if selected_query:
+    answer = get_answer(selected_query)
+    st.write(f"**Query:** {selected_query}")
+    st.write("**Answer:**")
+    st.write(answer)
 
 # User input
-if prompt := st.chat_input("What is up?"):
-    st.session_state.messages.append({"role": "user", "content": prompt})
-    with st.chat_message("user"):
-        st.markdown(prompt)
+user_query = st.text_input("Ask your questions here:")
 
-    with st.chat_message("assistant"):
-        with st.spinner("Thinking..."):
-            chat_history = [{"role": m["role"], "content": m["content"]} for m in st.session_state.messages]
-            response = get_answer(prompt, chat_history)
-            st.markdown(response)
-    st.session_state.messages.append({"role": "assistant", "content": response})
+if user_query:
+    answer = get_answer(user_query)
+    st.write("**Query:**")
+    st.write(user_query)
+    st.write("**Answer:**")
+    st.write(answer)
+
+# Function to clear selection
+def clear_selection():
+    st.session_state.selected_query = None
+
+st.markdown("____________________")
+
+if st.button("Clear"):
+    clear_selection()
+
+# Read the contents of the file
+with open(txt_file_path, 'r', encoding='utf-8') as file:
+    sjk_text = file.read()
+
+# Dropdown (expander) for displaying non-editable information
+with st.expander("Transparency: See the information used in the model here:"):
+    st.write(sjk_text)
