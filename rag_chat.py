@@ -60,12 +60,14 @@ def get_answer(query):
     return result["answer"]
 
 # Streamlit app layout
-st.title("Thesis Assistant: SJ-K RAG Model")
+st.title("SJ-K RAG model")
 st.markdown("""
-Welcome to the Thesis Assistant for SJ-K. This tool is designed to help you quickly understand the key points from the thesis without needing to read the entire document. Simply click on a predefined question or enter your own to get started.
-""")
+En demo for min ragmodel.  
 
-# Predefined questions
+Den er sat til at se på data fra SJ-K.dk, men meningen med tiden er naturligvis at sætte den til at se på data fra folketinget.
+""", unsafe_allow_html=False)
+
+# Define your queries here
 queries = {
     "What is SJ&K?": "What is SJ&K?",
     "How can they help me?": "How can they help me?",
@@ -73,15 +75,18 @@ queries = {
     "How can SJ&K help me understand the status of Danish politics?": "How can SJ&K help me understand the status of Danish politics?",
 }
 
+# Streamlit app layout
 st.markdown("""
-### Select a Question
-Click on a question to get an answer, or type your own question in the input box below.
-""")
+Tryk på et spørgsmål eller skriv dit eget spørgsmål i chatten nedenfor.
+""", unsafe_allow_html=False)
+
+
+
 
 # Initialize a variable to hold the selected query
 selected_query = None
 
-# Create buttons for each predefined query
+# Create buttons for each query
 for button_label, query in queries.items():
     if st.button(button_label):
         selected_query = query
@@ -89,34 +94,72 @@ for button_label, query in queries.items():
 
 # Check if a query has been selected
 if selected_query:
+<<<<<<< HEAD
     answer, source = get_answer(selected_query)
     st.write(f"**Query:** {selected_query}")
     st.write("**Answer:**")
     st.write(answer)
     st.write("**Source:**")
     st.write(source)
+=======
+    # Assuming get_answer function is defined as per your provided code
+    answer = get_answer(selected_query)
+
+    # Display the selected query and the answer
+    st.write(f"Query: {selected_query}")
+    st.write("Answer:")
+    st.write(answer)
+else:
+    st.write("")
+>>>>>>> parent of c0d100b (Update rag_chat.py)
 
 # User input
-user_query = st.text_input("Ask your questions here:")
+user_query = st.text_input("Ask your questions here (Preferably in English men dansk virker også):")
 
 if user_query:
+<<<<<<< HEAD
     answer, source = get_answer(user_query)
     st.write("**Query:**")
+=======
+    # Get answer from the conversational chain
+    answer = get_answer(user_query)
+
+    # Display the answer
+    st.write("Query:")
+>>>>>>> parent of c0d100b (Update rag_chat.py)
     st.write(user_query)
-    st.write("**Answer:**")
+    st.write("Answer:")
     st.write(answer)
     st.write("**Source:**")
     st.write(source)
 
+
 # Function to clear selection
 def clear_selection():
     st.session_state.selected_query = None
+
 
 st.markdown("____________________")
 
 if st.button("Clear"):
     clear_selection()
 
+<<<<<<< HEAD
+=======
+
+# Read the contents of the file
+with open(txt_file_path, 'r', encoding='utf-8') as file:
+    sjk_text = file.read()
+
+# Dropdown (expander) for displaying non-editable information
+with st.expander("For transparens: Se hvilken information jeg har puttet i modellen her:"):
+    st.write(sjk_text)
+
+st.markdown("*Obs: Jeg har ikke taget noget om nyhedsbreve, media eller buzzed med.*")
+st.markdown("*Asterix: Jeg har inkluderet dette spørgsmål for at vise, at den ikke bare finder på noget tilfældigt*")
+
+
+>>>>>>> parent of c0d100b (Update rag_chat.py)
 
 st.markdown("*Note: Information about newsletters, media, or buzz has been excluded.*")
 st.markdown("*Asterisk: This question is included to demonstrate that the model does not generate random answers.*")
