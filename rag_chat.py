@@ -43,6 +43,11 @@ conversation_chain = ConversationalRetrievalChain.from_llm(
     memory=memory
 )
 
+def get_answer(query):
+    result = conversation_chain({"question": query})
+    return result["answer"]
+
+
 # Streamlit app layout
 st.title("Thesis Assistant: JAN-RAG Model")
 st.markdown("""
