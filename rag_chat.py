@@ -43,14 +43,24 @@ conversation_chain = ConversationalRetrievalChain.from_llm(
     memory=memory
 )
 
-# Load abstract as system prompt
-abstract_file_path = 'Abstract_dansk.txt'
+# Load abstract
+abstract_file_path = 'abstract.txt'
 with open(abstract_file_path, 'r', encoding='utf-8') as file:
-    system_prompt = file.read()
+    abstract = file.read()
+
+# Combine abstract with user query
+def get_answer(query):
+    prompt = f"{abstract}\n\nUser Query: {query}"
+    result = conversation_chain({"question": prompt})
+    return result["answer"]
+
+"""
 
 def get_answer(query):
-    result = conversation_chain({"question": query, "system_prompt": system_prompt})
+    result = conversation_chain({"question": query})
     return result["answer"]
+
+"""
     
 # Streamlit app layout
 st.title("Thesis Assistant: SJ-K RAG Model")
