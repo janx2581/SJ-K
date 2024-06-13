@@ -59,6 +59,36 @@ def stream_answer(query):
         yield chunk + ' '
         time.sleep(0.01)  # Optional: adjust the sleep time for a smoother typewriter effect
 
+# Custom CSS for dark blue and black color scheme
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: #000000;  /* Black background */
+        color: #ffffff;  /* White text */
+    }
+    .stApp {
+        background-color: #000000;  /* Black background */
+    }
+    .stMarkdown, .stTextInput, .stButton, .stTitle {
+        color: #ffffff;  /* White text */
+    }
+    .stButton button {
+        background-color: #00008B;  /* Dark blue button */
+        color: #ffffff;  /* White text on button */
+    }
+    .stTextInput>div>input {
+        background-color: #00008B;  /* Dark blue input box */
+        color: #ffffff;  /* White text in input box */
+    }
+    .stMarkdown h1, .stMarkdown h2, .stMarkdown h3, .stMarkdown p {
+        color: #ffffff;  /* White headings and paragraphs */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # Streamlit app layout
 st.title("Speciale RAG-model")
 st.markdown("""
