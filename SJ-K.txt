@@ -1,4 +1,8 @@
 Hovedkonklusionen i specialet: AI-redskabet lever ikke op til programteorien, da den leverer for mange falske positiver.
+SJ&K læste ikke monitoreringsrapporten fra AI-redskabet fast, da der var for mange falske positiver, men brugte den til at orientere sig bagudrettet om politiske sager.
+Zero Carbon Shipping læste ikke monitoreringsrapporten fra AI-redskabet fast, da der var for mange falske positiver. De så dog at med bedre prompt engineering og bedre brugerflade, kunne AI-redskabet være nyttigt for danske aktører
+Dansk Standard læste ikke monitoreringsrapporten fra AI-redskabet fast, da der var for mange falske positiver. 
+Danske Gymnasier læste monitoreringsrapporten fra AI-redskabet fast og de blev orienteret om sager, som de måske eller ikke havde blevet orienteret om. På den måde gav AI-redskabet nytte for Danske Gymnasier, men kun til en vis grad. 
 
 Abstract
 Dette speciale undersøger potentialet i at bruge Generativ AI (GenAI), specifikt sprogmodeller, til at forbedre public affairs feltet gennem dokumentklassificering. Public affairs organisationer oplever udfordringer med mængden af parlamentariske dokumenter, hvilket kan føre til, at informationer, som er relevante for deres interesser, overses. Dette speciale undersøger et specialdesignet AI-redskab, der automatiserer klassificeringen af parlamentariske dokumenter og leverer kuraterede indsigter til public affairs-organisationer. Dette redskab kan blive en ressource i den pluralistiske public affairs-tradition i Danmark, som er kendetegnet ved konkurrence mellem public affairs-organisationer, og potentielt tilbyde en konkurrencefordel.
