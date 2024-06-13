@@ -57,7 +57,7 @@ def stream_answer(query):
     answer = get_answer(query)
     for chunk in answer.split(' '):  # Yield word by word
         yield chunk + ' '
-        time.sleep(0.05)  # Optional: adjust the sleep time for a smoother typewriter effect
+        time.sleep(0.01)  # Optional: adjust the sleep time for a smoother typewriter effect
 
 # Streamlit app layout
 st.title("Tasha er sej")
@@ -109,7 +109,7 @@ st.markdown("____________________")
 
 if st.button("Clear"):
     clear_selection()
-
+    
 # Read the contents of the file
 with open(txt_file_path, 'r', encoding='utf-8') as file:
     sjk_text = file.read()
