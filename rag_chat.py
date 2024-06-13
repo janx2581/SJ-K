@@ -69,18 +69,18 @@ Click on a question to get an answer, or type your own question in the input box
 """)
 
 # Initialize a variable to hold the selected query
-selected_query = None
+if 'selected_query' not in st.session_state:
+    st.session_state.selected_query = None
 
 # Create buttons for each predefined query
 for button_label, query in queries.items():
     if st.button(button_label):
-        selected_query = query
-        break  # Stop checking other buttons once one has been pressed
+        st.session_state.selected_query = query
 
 # Check if a query has been selected
-if selected_query:
-    answer = get_answer(selected_query)
-    st.write(f"**Query:** {selected_query}")
+if st.session_state.selected_query:
+    answer = get_answer(st.session_state.selected_query)
+    st.write(f"**Query:** {st.session_state.selected_query}")
     st.write("**Answer:**")
     st.write(answer)
 
