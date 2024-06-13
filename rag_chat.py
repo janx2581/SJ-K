@@ -77,7 +77,6 @@ if 'selected_query' not in st.session_state:
 for button_label, query in queries.items():
     if st.button(button_label):
         st.session_state.selected_query = query
-        break
 
 # User input
 user_query = st.text_input("Ask your questions here:")
@@ -95,6 +94,7 @@ if st.session_state.selected_query:
 # Function to clear selection
 def clear_selection():
     st.session_state.selected_query = None
+    st.experimental_rerun()
 
 st.markdown("____________________")
 
