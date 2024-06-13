@@ -57,9 +57,9 @@ Welcome to the Thesis Assistant for SJ-K. This tool is designed to help you quic
 
 # Predefined questions
 queries = {
-    "Hvad er den konceptuelle kontekst for GenAI? Vær detaljeret": "Hvad er den konceptuelle kontekst for GenAI? Vær detaljeret",
+    "Beskriv den konceptuelle kontekst for GenAI i specialet. Vær detaljeret": "Beskriv den konceptuelle kontekst for GenAI i specialet. Vær detaljeret",
     "Hvad er konklusionen?": "Hvad er konklusionen?",
-    "Hvad er den konceptuelle kontekst for public affairs? Vær detaljeret": "Hvad er den konceptuelle kontekst for public affairs? Vær detaljeret",
+    "Opsummer pointerne om public affairs og fokuser på pluralismen som public affairs tradition. Vær detaljeret": "Opsummer pointerne om public affairs og fokuser på pluralismen som public affairs tradition. Vær detaljeret",
     "Hvilke rolle spillede Mærsk McKinney Møller Center for Zero Carbon Shipping?": "Hvilke rolle spillede Mærsk McKinney Møller Center for Zero Carbon Shipping?",
     "Beskriv metoden benyttet i specialet. Vær detaljeret": "Beskriv metoden benyttet i specialet. Vær detaljeret",
 }
