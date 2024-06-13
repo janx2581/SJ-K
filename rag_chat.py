@@ -72,6 +72,7 @@ queries = {
     "Opsummer pointerne om public affairs. Vær detaljeret": "Opsummer pointerne om public affairs. Vær detaljeret",
     "Hvilke rolle spillede Mærsk McKinney Møller Center for Zero Carbon Shipping?": "Hvilke rolle spillede Mærsk McKinney Møller Center for Zero Carbon Shipping?",
     "Beskriv metoden benyttet i specialet. Vær detaljeret": "Beskriv metoden benyttet i specialet. Vær detaljeret",
+    "Hvordan virker AI-redskabet?": "Hvordan virker AI-redskabet?",
 }
 
 st.markdown("""
