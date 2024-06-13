@@ -96,8 +96,8 @@ if user_query:
 
 # Check if a query has been selected
 if st.session_state.selected_query:
-    st.write(f"**Query:** {st.session_state.selected_query}")
-    st.write("**Answer:**")
+    st.write(f"**Spørgsmål:** {st.session_state.selected_query}")
+    st.write("**Svar:**")
     st.write_stream(stream_answer(st.session_state.selected_query))
 
 # Function to clear selection
@@ -109,11 +109,4 @@ st.markdown("____________________")
 
 if st.button("Clear"):
     clear_selection()
-    
-# Read the contents of the file
-with open(txt_file_path, 'r', encoding='utf-8') as file:
-    sjk_text = file.read()
 
-# Dropdown (expander) for displaying non-editable information
-with st.expander("Transparency: See the information used in the model here:"):
-    st.write(sjk_text)
