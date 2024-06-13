@@ -89,7 +89,7 @@ for button_label, query in queries.items():
         st.session_state.selected_query = query
 
 # User input
-user_query = st.text_input("Ask your questions here:")
+user_query = st.text_input("Stil dit spørgsmål her:")
 
 if user_query:
     st.session_state.selected_query = user_query
