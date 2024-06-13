@@ -107,7 +107,6 @@ queries = {
 
 st.markdown("""
 ### Vælg et sprøgsmål eller stil dit eget i tekstboksen nedenfor
-Klik på knappen "clear" for at rydde og stille et nyt spørgsmål
 """)
 
 # Initialize a variable to hold the selected query
