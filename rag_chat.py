@@ -59,7 +59,7 @@ Welcome to the Thesis Assistant for SJ-K. This tool is designed to help you quic
 queries = {
     "Beskriv den konceptuelle kontekst for GenAI i specialet. Vær detaljeret": "Beskriv den konceptuelle kontekst for GenAI i specialet. Vær detaljeret",
     "Hvad er konklusionen?": "Hvad er konklusionen?",
-    "Opsummer pointerne om public affairs og fokuser på pluralismen som public affairs tradition. Vær detaljeret": "Opsummer pointerne om public affairs og fokuser på pluralismen som public affairs tradition. Vær detaljeret",
+    "Opsummer pointerne om public affairs. Vær detaljeret": "Opsummer pointerne om public affairs. Vær detaljeret",
     "Hvilke rolle spillede Mærsk McKinney Møller Center for Zero Carbon Shipping?": "Hvilke rolle spillede Mærsk McKinney Møller Center for Zero Carbon Shipping?",
     "Beskriv metoden benyttet i specialet. Vær detaljeret": "Beskriv metoden benyttet i specialet. Vær detaljeret",
 }
@@ -96,10 +96,10 @@ def clear_selection():
     st.session_state.selected_query = None
     st.experimental_rerun()
 
-st.markdown("____________________")
-
 if st.button("Clear"):
     clear_selection()
+
+st.markdown("____________________")
 
 # Read the contents of the file
 with open(txt_file_path, 'r', encoding='utf-8') as file:
