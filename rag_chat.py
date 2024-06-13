@@ -1,4 +1,4 @@
-import streamlit as st
+eimport streamlit as st
 from langchain.chains import RetrievalQA
 from langchain.chat_models import ChatOpenAI
 from langchain.document_loaders import TextLoader
@@ -59,7 +59,7 @@ Welcome to the Thesis Assistant for SJ-K. This tool is designed to help you quic
 queries = {
     "What is SJ&K?": "What is SJ&K?",
     "Hvad er konklusionen?": "Hvad er konklusionen på specialet?",
-    "What is the status of Danish politics?*": "What is the status of Danish politics?",
+    "What is the status of Danish politics?": "What is the status of Danish politics?",
     "How can SJ&K help me understand the status of Danish politics?": "How can SJ&K help me understand the status of Danish politics?",
 }
 
@@ -72,25 +72,22 @@ Click on a question to get an answer, or type your own question in the input box
 if 'selected_query' not in st.session_state:
     st.session_state.selected_query = None
 
-# Create buttons for each predefined query
+# Create buttons for each predefined query and handle selection
 for button_label, query in queries.items():
     if st.button(button_label):
         st.session_state.selected_query = query
-
-# Check if a query has been selected
-if st.session_state.selected_query:
-    answer = get_answer(st.session_state.selected_query)
-    st.write(f"**Query:** {st.session_state.selected_query}")
-    st.write("**Answer:**")
-    st.write(answer)
+        break
 
 # User input
 user_query = st.text_input("Ask your questions here:")
 
 if user_query:
-    answer = get_answer(user_query)
-    st.write("**Query:**")
-    st.write(user_query)
+    st.session_state.selected_query = user_query
+
+# Check if a query has been selected
+if st.session_state.selected_query:
+    answer = get_answer(st.session_state.selected_query)
+    st.write(f"**Query:** {st.session_state.selected_query}")
     st.write("**Answer:**")
     st.write(answer)
 
