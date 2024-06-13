@@ -57,10 +57,11 @@ Welcome to the Thesis Assistant for SJ-K. This tool is designed to help you quic
 
 # Predefined questions
 queries = {
-    "What is SJ&K?": "What is SJ&K?",
-    "Hvad er konklusionen?": "Hvad er konklusionen på specialet?",
-    "What is the status of Danish politics?": "What is the status of Danish politics?",
-    "How can SJ&K help me understand the status of Danish politics?": "How can SJ&K help me understand the status of Danish politics?",
+    "Hvad er den konceptuelle kontekst for GenAI? Vær detaljeret": "Hvad er den konceptuelle kontekst for GenAI? Vær detaljeret",
+    "Hvad er konklusionen?": "Hvad er konklusionen?",
+    "Hvad er den konceptuelle kontekst for public affairs? Vær detaljeret": "Hvad er den konceptuelle kontekst for public affairs? Vær detaljeret",
+    "Hvilke rolle spillede Mærsk McKinney Møller Center for Zero Carbon Shipping?": "Hvilke rolle spillede Mærsk McKinney Møller Center for Zero Carbon Shipping?",
+    "Beskriv metoden benyttet i specialet. Vær detaljeret": "Beskriv metoden benyttet i specialet. Vær detaljeret",
 }
 
 st.markdown("""
