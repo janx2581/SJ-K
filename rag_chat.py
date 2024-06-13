@@ -62,7 +62,7 @@ def stream_answer(query):
 # Streamlit app layout
 st.title("Speciale RAG-model")
 st.markdown("""
-Welcome to the Thesis Assistant for SJ-K. This tool is designed to help you quickly understand the key points from the thesis without needing to read the entire document. Simply click on a predefined question or enter your own to get started.
+Velkommen til Specialeassistenten for Jans speciale. Dette værktøj er designet til at hjælpe dig med hurtigt at forstå de centrale punkter fra specialet uden at skulle læse hele dokumentet. Klik blot på et foruddefineret spørgsmål eller indtast dit eget for at komme i gang.
 """)
 
 # Predefined questions
