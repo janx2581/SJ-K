@@ -57,7 +57,7 @@ def stream_answer(query):
     answer = get_answer(query)
     for chunk in answer.split(' '):  # Yield word by word
         yield chunk + ' '
-        time.sleep(0.1)  # Optional: adjust the sleep time for a smoother typewriter effect
+        time.sleep(0.05)  # Optional: adjust the sleep time for a smoother typewriter effect
 
 # Streamlit app layout
 st.title("Tasha er sej")
