@@ -86,10 +86,13 @@ if user_query:
 
 # Check if a query has been selected
 if st.session_state.selected_query:
-    answer = get_answer(st.session_state.selected_query)
+    with st.spinner('Wait for it...'):
+        answer = get_answer(st.session_state.selected_query)
+    st.success('Done!')
     st.write(f"**Query:** {st.session_state.selected_query}")
     st.write("**Answer:**")
     st.write(answer)
+
 
 # Function to clear selection
 def clear_selection():
