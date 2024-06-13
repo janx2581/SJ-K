@@ -44,24 +44,32 @@ conversation_chain = ConversationalRetrievalChain.from_llm(
     memory=memory
 )
 
-def get_answer(query):
-    result = conversation_chain({"question": query})
-    return result["answer"]
 
+def get_answer(query):
+    try:
+        result = conversation_chain({"question": query})
+        return result["answer"]
+    except Exception as e:
+        return f"An error occurred: {e}"
+
+def stream_answer(query):
+    answer = get_answer(query)
+    for chunk in answer.split(' '):  # Yield word by word
+        yield chunk + ' '
+        time.sleep(0.1)  # Optional: adjust the sleep time for a smoother typewriter effect
 
 # Streamlit app layout
-st.title("Speciale-opsummeringsbot")
+st.title("Tasha er sej")
 st.markdown("""
 Welcome to the Thesis Assistant for SJ-K. This tool is designed to help you quickly understand the key points from the thesis without needing to read the entire document. Simply click on a predefined question or enter your own to get started.
 """)
 
 # Predefined questions
 queries = {
-    "Beskriv den konceptuelle kontekst for GenAI i specialet. Vær detaljeret": "Beskriv den konceptuelle kontekst for GenAI i specialet. Vær detaljeret",
-    "Hvad er konklusionen?": "Hvad er konklusionen?",
-    "Opsummer pointerne om public affairs. Vær detaljeret": "Opsummer pointerne om public affairs. Vær detaljeret",
-    "Hvilke rolle spillede Mærsk McKinney Møller Center for Zero Carbon Shipping?": "Hvilke rolle spillede Mærsk McKinney Møller Center for Zero Carbon Shipping?",
-    "Beskriv metoden benyttet i specialet. Vær detaljeret": "Beskriv metoden benyttet i specialet. Vær detaljeret",
+    "What is SJ&K?": "What is SJ&K?",
+    "Hvad er konklusionen?": "Hvad er konklusionen på specialet?",
+    "What is the status of Danish politics?": "What is the status of Danish politics?",
+    "How can SJ&K help me understand the status of Danish politics?": "How can SJ&K help me understand the status of Danish politics?",
 }
 
 st.markdown("""
@@ -86,23 +94,19 @@ if user_query:
 
 # Check if a query has been selected
 if st.session_state.selected_query:
-    with st.spinner('Wait for it...'):
-        answer = get_answer(st.session_state.selected_query)
-    st.success('Done!')
     st.write(f"**Query:** {st.session_state.selected_query}")
     st.write("**Answer:**")
-    st.write(answer)
-
+    st.write_stream(stream_answer(st.session_state.selected_query))
 
 # Function to clear selection
 def clear_selection():
     st.session_state.selected_query = None
     st.experimental_rerun()
 
+st.markdown("____________________")
+
 if st.button("Clear"):
     clear_selection()
-
-st.markdown("____________________")
 
 # Read the contents of the file
 with open(txt_file_path, 'r', encoding='utf-8') as file:
