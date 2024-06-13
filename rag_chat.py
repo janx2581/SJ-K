@@ -17,6 +17,7 @@ from langchain_community.chat_models import ChatOpenAI
 import openai
 import os
 from langchain.text_splitter import CharacterTextSplitter
+import time
 
 # Set up API key
 api_key = st.secrets["OPENAI_API_KEY"]
@@ -66,10 +67,11 @@ Welcome to the Thesis Assistant for SJ-K. This tool is designed to help you quic
 
 # Predefined questions
 queries = {
-    "What is SJ&K?": "What is SJ&K?",
-    "Hvad er konklusionen?": "Hvad er konklusionen på specialet?",
-    "What is the status of Danish politics?": "What is the status of Danish politics?",
-    "How can SJ&K help me understand the status of Danish politics?": "How can SJ&K help me understand the status of Danish politics?",
+    "Beskriv den konceptuelle kontekst for GenAI i specialet. Vær detaljeret": "Beskriv den konceptuelle kontekst for GenAI i specialet. Vær detaljeret",
+    "Hvad er konklusionen?": "Hvad er konklusionen?",
+    "Opsummer pointerne om public affairs. Vær detaljeret": "Opsummer pointerne om public affairs. Vær detaljeret",
+    "Hvilke rolle spillede Mærsk McKinney Møller Center for Zero Carbon Shipping?": "Hvilke rolle spillede Mærsk McKinney Møller Center for Zero Carbon Shipping?",
+    "Beskriv metoden benyttet i specialet. Vær detaljeret": "Beskriv metoden benyttet i specialet. Vær detaljeret",
 }
 
 st.markdown("""
