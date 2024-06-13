@@ -60,7 +60,7 @@ def stream_answer(query):
         time.sleep(0.01)  # Optional: adjust the sleep time for a smoother typewriter effect
 
 # Streamlit app layout
-st.title("Tasha er sej")
+st.title("Speciale RAG-model")
 st.markdown("""
 Welcome to the Thesis Assistant for SJ-K. This tool is designed to help you quickly understand the key points from the thesis without needing to read the entire document. Simply click on a predefined question or enter your own to get started.
 """)
