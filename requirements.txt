@@ -1,7 +1,7 @@
 openai
 tiktoken
 faiss-gpu
-#langchain_experimental
+langchain_experimental
 langchain[docarray]
 langchain_openai
 langchain_community
