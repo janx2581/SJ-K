@@ -4,7 +4,7 @@ faiss-gpu
 #langchain_experimental
 langchain[docarray]
 langchain_openai
-#langchain_community
+langchain_community
 streamlit
 pymupdf
 langchain-community
