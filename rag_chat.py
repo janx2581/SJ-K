@@ -18,6 +18,8 @@ import openai
 import os
 from langchain.text_splitter import CharacterTextSplitter
 import time
+import tenacity.asyncio
+
 
 # Set up API key
 api_key = st.secrets["OPENAI_API_KEY"]
