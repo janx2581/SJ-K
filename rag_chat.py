@@ -1,5 +1,5 @@
 import streamlit as st
-from langchain_community.chat_models import ChatOpenAI #2 tjek
+from langchain_community.chat_models import ChatOpenAI #tjek
 from langchain_community.document_loaders import TextLoader #tjek
 from langchain_community.vectorstores import FAISS #tjek
 #from langchain_community.text_splitter import CharacterTextSplitter # tjek
