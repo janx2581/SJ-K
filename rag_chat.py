@@ -1,12 +1,10 @@
 import streamlit as st
-
 from langchain_community.chat_models import ChatOpenAI # tjek
 from langchain_community.document_loaders import TextLoader #tjek
 from langchain_community.vectorstores import FAISS #tjek
 #from langchain_community.text_splitter import CharacterTextSplitter # tjek
 from langchain.memory import ConversationBufferMemory #tjek
 from langchain.chains import ConversationalRetrievalChain #tjek
-
 from langchain.chains import RetrievalQA
 from langchain.vectorstores import DocArrayInMemorySearch
 from langchain.embeddings import OpenAIEmbeddings, HuggingFaceInstructEmbeddings
