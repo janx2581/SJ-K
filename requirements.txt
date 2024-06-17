@@ -8,5 +8,5 @@ langchain_openai
 langchain_community
 streamlit
 pymupdf
-#langchain-community
+langchain-community
 tenacity
