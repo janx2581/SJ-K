@@ -10,4 +10,3 @@ streamlit
 pymupdf
 #langchain-community
 tenacity
-tenacity.asyncio
