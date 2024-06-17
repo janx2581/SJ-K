@@ -1,24 +1,13 @@
 import streamlit as st
-from langchain_community.chat_models import ChatOpenAI #ikke tjek
-from langchain_community.document_loaders import TextLoader #tjek
-from langchain_community.vectorstores import FAISS #tjek
-#from langchain_community.text_splitter import CharacterTextSplitter # tjek
-from langchain.memory import ConversationBufferMemory #tjek
-from langchain.chains import ConversationalRetrievalChain #tjek
-from langchain.chains import RetrievalQA
-from langchain.vectorstores import DocArrayInMemorySearch
-from langchain.embeddings import OpenAIEmbeddings, HuggingFaceInstructEmbeddings
-from langchain.indexes import VectorstoreIndexCreator
-#from langchain_experimental.agents.agent_toolkits.csv.base import create_csv_agent
-from langchain.agents.agent_types import AgentType
-import tiktoken
-#from langchain_openai import ChatOpenAI
-from langchain_community.chat_models import ChatOpenAI
-import openai
-import os
+from langchain.chat_models import ChatOpenAI
+from langchain.document_loaders import TextLoader
+from langchain.vectorstores import FAISS
+from langchain.memory import ConversationBufferMemory
+from langchain.chains import ConversationalRetrievalChain
+from langchain.embeddings import OpenAIEmbeddings
 from langchain.text_splitter import CharacterTextSplitter
+import os
 import time
-#import tenacity.asyncio
 
 # Set up API key
 api_key = st.secrets["OPENAI_API_KEY"]
