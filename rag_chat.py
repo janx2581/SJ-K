@@ -93,7 +93,7 @@ st.markdown(
 # Streamlit app layout
 st.title("Speciale RAG-model")
 st.markdown("""
-Velkommen til Specialeassistenten for Jans speciale. Dette værktøj er designet til at hjælpe dig med hurtigt at forstå de centrale punkter fra specialet uden at skulle læse hele dokumentet. Klik blot på et foruddefineret spørgsmål eller indtast dit eget for at komme i gang.
+Velkommen til Specialeassistenten for Jans speciale. Dette værktøj er designet til at hjælpe dig med hurtigt at forstå de centrale punkter fra specialet uden at skulle læse hele dokumentet. Klik blot på et foruddefineret spørgsmål eller indtast dit eget nedenfor for at komme i gang.
 """)
 
 # Predefined questions
@@ -107,7 +107,7 @@ queries = {
 }
 
 st.markdown("""
-### Vælg et sprøgsmål eller stil dit eget i tekstboksen nedenfor
+### Vælg et spørgsmål eller stil dit eget i tekstboksen nedenfor
 """)
 
 # Initialize a variable to hold the selected query
